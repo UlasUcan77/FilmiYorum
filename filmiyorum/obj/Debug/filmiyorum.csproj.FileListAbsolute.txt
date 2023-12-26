@@ -1,0 +1,11 @@
+C:\Users\ulasu\source\repos\filmiyorum\bin\Debug\filmiyorum.exe.config
+C:\Users\ulasu\source\repos\filmiyorum\bin\Debug\filmiyorum.exe
+C:\Users\ulasu\source\repos\filmiyorum\bin\Debug\filmiyorum.pdb
+C:\Users\ulasu\source\repos\filmiyorum\obj\Debug\filmiyorum.csproj.AssemblyReference.cache
+C:\Users\ulasu\source\repos\filmiyorum\obj\Debug\filmiyorum.Anasayfa.resources
+C:\Users\ulasu\source\repos\filmiyorum\obj\Debug\filmiyorum.Form1.resources
+C:\Users\ulasu\source\repos\filmiyorum\obj\Debug\filmiyorum.Properties.Resources.resources
+C:\Users\ulasu\source\repos\filmiyorum\obj\Debug\filmiyorum.csproj.GenerateResource.cache
+C:\Users\ulasu\source\repos\filmiyorum\obj\Debug\filmiyorum.csproj.CoreCompileInputs.cache
+C:\Users\ulasu\source\repos\filmiyorum\obj\Debug\filmiyorum.exe
+C:\Users\ulasu\source\repos\filmiyorum\obj\Debug\filmiyorum.pdb
