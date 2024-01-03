@@ -40,7 +40,6 @@ namespace filmiyorum
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -65,7 +64,6 @@ namespace filmiyorum
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.pictureBox3);
             this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
@@ -163,15 +161,6 @@ namespace filmiyorum
             this.button4.Text = "PROFIL";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(341, 108);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(434, 205);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // Anasayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -209,6 +198,5 @@ namespace filmiyorum
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
     }
 }
