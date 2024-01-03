@@ -311,8 +311,8 @@ namespace filmiyorum
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(544, 504);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
