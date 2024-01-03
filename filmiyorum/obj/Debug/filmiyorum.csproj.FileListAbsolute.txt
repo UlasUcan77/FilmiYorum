@@ -9,3 +9,14 @@ C:\Users\ulasu\source\repos\filmiyorum\obj\Debug\filmiyorum.csproj.GenerateResou
 C:\Users\ulasu\source\repos\filmiyorum\obj\Debug\filmiyorum.csproj.CoreCompileInputs.cache
 C:\Users\ulasu\source\repos\filmiyorum\obj\Debug\filmiyorum.exe
 C:\Users\ulasu\source\repos\filmiyorum\obj\Debug\filmiyorum.pdb
+C:\Users\Umutl\Source\Repos\FilmiYorum\filmiyorum\bin\Debug\filmiyorum.exe.config
+C:\Users\Umutl\Source\Repos\FilmiYorum\filmiyorum\bin\Debug\filmiyorum.exe
+C:\Users\Umutl\Source\Repos\FilmiYorum\filmiyorum\bin\Debug\filmiyorum.pdb
+C:\Users\Umutl\Source\Repos\FilmiYorum\filmiyorum\obj\Debug\filmiyorum.csproj.AssemblyReference.cache
+C:\Users\Umutl\Source\Repos\FilmiYorum\filmiyorum\obj\Debug\filmiyorum.Anasayfa.resources
+C:\Users\Umutl\Source\Repos\FilmiYorum\filmiyorum\obj\Debug\filmiyorum.Form1.resources
+C:\Users\Umutl\Source\Repos\FilmiYorum\filmiyorum\obj\Debug\filmiyorum.Properties.Resources.resources
+C:\Users\Umutl\Source\Repos\FilmiYorum\filmiyorum\obj\Debug\filmiyorum.csproj.GenerateResource.cache
+C:\Users\Umutl\Source\Repos\FilmiYorum\filmiyorum\obj\Debug\filmiyorum.csproj.CoreCompileInputs.cache
+C:\Users\Umutl\Source\Repos\FilmiYorum\filmiyorum\obj\Debug\filmiyorum.exe
+C:\Users\Umutl\Source\Repos\FilmiYorum\filmiyorum\obj\Debug\filmiyorum.pdb

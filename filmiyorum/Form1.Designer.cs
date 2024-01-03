@@ -40,6 +40,7 @@ namespace filmiyorum
             this.button3 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,9 +68,10 @@ namespace filmiyorum
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.BackColor = System.Drawing.Color.LightCoral;
+            this.button1.ForeColor = System.Drawing.Color.IndianRed;
             this.button1.Location = new System.Drawing.Point(200, 176);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(185, 32);
             this.button1.TabIndex = 2;
@@ -80,7 +82,7 @@ namespace filmiyorum
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(265, 65);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(56, 20);
             this.textBox1.TabIndex = 1;
@@ -88,7 +90,7 @@ namespace filmiyorum
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(265, 100);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(56, 20);
             this.textBox2.TabIndex = 2;
@@ -96,8 +98,8 @@ namespace filmiyorum
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox1.Location = new System.Drawing.Point(128, -1);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(118, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(365, 350);
             this.pictureBox1.TabIndex = 3;
@@ -107,7 +109,7 @@ namespace filmiyorum
             // 
             this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button2.Location = new System.Drawing.Point(200, 222);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(185, 32);
             this.button2.TabIndex = 4;
@@ -138,10 +140,20 @@ namespace filmiyorum
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(362, 12);
+            this.comboBox1.Location = new System.Drawing.Point(310, 21);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 7;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(336, 154);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(80, 17);
+            this.checkBox2.TabIndex = 8;
+            this.checkBox2.Text = "checkBox2";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -150,6 +162,7 @@ namespace filmiyorum
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(613, 477);
+            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button3);
@@ -181,6 +194,7 @@ namespace filmiyorum
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
 
