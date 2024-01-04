@@ -21,24 +21,44 @@ namespace filmiyorum
 
         //bağlanma işlemi ve atama işlemleri yapılır
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            Anasayfa form2 = new Anasayfa();
-            form2.Show();
-            Admin form3 = new Admin();
-            form3.Show();
-            profil form4 = new profil();
-            form4.Show();
+
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            string adminkullaniciadi = "admin";
+            string adminsifre = "123";
 
+            baglan.Open();
+            NpgsqlCommand komut = new NpgsqlCommand("Select * FROM kullanicilar", baglan); //Hastane database'inden giris table'ına erişim
+            NpgsqlDataReader reader = komut.ExecuteReader();
+
+
+            if (reader.Read())
+            {
+                string kullaniciadi = reader["kullaniciadi"].ToString();    //database'den sifre ve sistemid bilgilerini alma
+                string sifre = reader["sifre"].ToString();
+
+                if (txtKullaniciAdi.Text == kullaniciadi && txtKullaniciSifre.Text == sifre)  //kullanıcıdan alınanlarla sistemdeki bilgileri karşılaştırma
+                {
+                    Anasayfa form2 = new Anasayfa();
+                    form2.ShowDialog();
+                    this.Hide();
+                }
+                else if(txtKullaniciAdi.Text== adminkullaniciadi && txtKullaniciSifre.Text==adminsifre) 
+                {
+                    Admin form3 = new Admin();
+                    form3.ShowDialog();
+                    this.Hide();
+
+                    MessageBox.Show("Yanlış sistem id veya şifre. \nLütfen tekrar deneyiniz.\nŞifrenizi unuttuysanız 'Şifremi Unuttum'a tıklayınız.");
+                }
+            }
+
+            reader.Close();
+            baglan.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -70,6 +90,43 @@ namespace filmiyorum
             Form1 formuye = new Form1();
             formuye.Hide();
 
+        }
+
+        private void girisyap_Click(object sender, EventArgs e)
+        {
+            string adminkullaniciadi = "admin";
+            string adminsifre = "123";
+            baglan.Open();
+            NpgsqlCommand komut = new NpgsqlCommand("Select * FROM kullanicilar", baglan); //Hastane database'inden giris table'ına erişim
+            NpgsqlDataReader reader = komut.ExecuteReader();
+
+
+            if (reader.Read())
+            {
+                string kullaniciadi = reader["kullaniciadi"].ToString();    //database'den sifre ve sistemid bilgilerini alma
+                string sifre = reader["sifre"].ToString();
+
+                if (txtKullaniciAdi.Text == kullaniciadi && txtKullaniciSifre.Text == sifre)  //kullanıcıdan alınanlarla sistemdeki bilgileri karşılaştırma
+                {
+                    Anasayfa form2 = new Anasayfa();
+                    form2.ShowDialog();
+                    this.Hide();
+                }
+                else if (txtKullaniciAdi.Text == adminkullaniciadi && txtKullaniciSifre.Text == adminsifre)
+                {
+                    Admin form3 = new Admin();
+                    form3.ShowDialog();
+                    this.Hide();
+
+                }
+                else
+                {
+                    MessageBox.Show("Yanlış sistem id veya şifre. \nLütfen tekrar deneyiniz.\nŞifrenizi unuttuysanız 'Şifremi Unuttum'a tıklayınız.");
+                }
+            }
+
+            reader.Close();
+            baglan.Close();
         }
     }
 }

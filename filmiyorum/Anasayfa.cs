@@ -31,6 +31,9 @@ namespace filmiyorum
 
         private void button9_Click(object sender, EventArgs e)
         {
+
+            string puan = trackBar1.Value.ToString();
+            
             if (degerlendirme.Visible)
             {
                 degerlendirme.Visible = false; // Eğer panel görünürse, gizle
