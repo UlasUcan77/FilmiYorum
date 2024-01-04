@@ -69,7 +69,7 @@ namespace filmiyorum
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.degerlendirme = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -93,7 +93,7 @@ namespace filmiyorum
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            this.panel4.SuspendLayout();
+            this.degerlendirme.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,7 +104,7 @@ namespace filmiyorum
             this.button1.Font = new System.Drawing.Font("Agency FB", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(2, 203);
-            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(310, 214);
             this.button1.TabIndex = 1;
@@ -118,7 +118,7 @@ namespace filmiyorum
             this.button2.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button2.Location = new System.Drawing.Point(2, 410);
-            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button2.Margin = new System.Windows.Forms.Padding(6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(310, 214);
             this.button2.TabIndex = 2;
@@ -132,7 +132,7 @@ namespace filmiyorum
             this.button3.Font = new System.Drawing.Font("Agency FB", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button3.Location = new System.Drawing.Point(2, 618);
-            this.button3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button3.Margin = new System.Windows.Forms.Padding(6);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(310, 222);
             this.button3.TabIndex = 3;
@@ -145,7 +145,7 @@ namespace filmiyorum
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Location = new System.Drawing.Point(0, 6);
-            this.button4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button4.Margin = new System.Windows.Forms.Padding(6);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(106, 105);
             this.button4.TabIndex = 0;
@@ -162,7 +162,7 @@ namespace filmiyorum
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Location = new System.Drawing.Point(2, -6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(310, 216);
             this.panel1.TabIndex = 4;
@@ -239,10 +239,10 @@ namespace filmiyorum
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(306, 188);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel2.Location = new System.Drawing.Point(308, 188);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1509, 611);
+            this.panel2.Size = new System.Drawing.Size(1507, 662);
             this.panel2.TabIndex = 5;
             // 
             // button8
@@ -251,7 +251,7 @@ namespace filmiyorum
             this.button8.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button8.Location = new System.Drawing.Point(282, 15);
-            this.button8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button8.Margin = new System.Windows.Forms.Padding(6);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(222, 76);
             this.button8.TabIndex = 22;
@@ -269,7 +269,7 @@ namespace filmiyorum
             "Yönetmen",
             "Tür"});
             this.comboBox1.Location = new System.Drawing.Point(515, 22);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(6);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(219, 53);
             this.comboBox1.TabIndex = 21;
@@ -280,7 +280,7 @@ namespace filmiyorum
             this.textBox1.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.Window;
             this.textBox1.Location = new System.Drawing.Point(748, 24);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(6);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(594, 51);
             this.textBox1.TabIndex = 20;
@@ -288,7 +288,7 @@ namespace filmiyorum
             // pictureBox8
             // 
             this.pictureBox8.Location = new System.Drawing.Point(1272, 397);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(161, 210);
             this.pictureBox8.TabIndex = 19;
@@ -297,7 +297,7 @@ namespace filmiyorum
             // pictureBox9
             // 
             this.pictureBox9.Location = new System.Drawing.Point(1067, 397);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(161, 210);
             this.pictureBox9.TabIndex = 18;
@@ -306,7 +306,7 @@ namespace filmiyorum
             // pictureBox10
             // 
             this.pictureBox10.Location = new System.Drawing.Point(864, 397);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(161, 210);
             this.pictureBox10.TabIndex = 17;
@@ -315,7 +315,7 @@ namespace filmiyorum
             // pictureBox11
             // 
             this.pictureBox11.Location = new System.Drawing.Point(658, 397);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(161, 210);
             this.pictureBox11.TabIndex = 16;
@@ -324,7 +324,7 @@ namespace filmiyorum
             // pictureBox12
             // 
             this.pictureBox12.Location = new System.Drawing.Point(262, 397);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(161, 210);
             this.pictureBox12.TabIndex = 15;
@@ -333,7 +333,7 @@ namespace filmiyorum
             // pictureBox13
             // 
             this.pictureBox13.Location = new System.Drawing.Point(458, 397);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(161, 210);
             this.pictureBox13.TabIndex = 14;
@@ -342,7 +342,7 @@ namespace filmiyorum
             // pictureBox14
             // 
             this.pictureBox14.Location = new System.Drawing.Point(68, 397);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(161, 210);
             this.pictureBox14.TabIndex = 13;
@@ -351,7 +351,7 @@ namespace filmiyorum
             // pictureBox7
             // 
             this.pictureBox7.Location = new System.Drawing.Point(1272, 137);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(161, 210);
             this.pictureBox7.TabIndex = 12;
@@ -360,7 +360,7 @@ namespace filmiyorum
             // pictureBox6
             // 
             this.pictureBox6.Location = new System.Drawing.Point(1067, 137);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(161, 210);
             this.pictureBox6.TabIndex = 11;
@@ -369,7 +369,7 @@ namespace filmiyorum
             // pictureBox5
             // 
             this.pictureBox5.Location = new System.Drawing.Point(864, 137);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(161, 210);
             this.pictureBox5.TabIndex = 10;
@@ -378,7 +378,7 @@ namespace filmiyorum
             // pictureBox4
             // 
             this.pictureBox4.Location = new System.Drawing.Point(658, 137);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(161, 210);
             this.pictureBox4.TabIndex = 9;
@@ -387,7 +387,7 @@ namespace filmiyorum
             // pictureBox3
             // 
             this.pictureBox3.Location = new System.Drawing.Point(262, 137);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(161, 210);
             this.pictureBox3.TabIndex = 8;
@@ -396,7 +396,7 @@ namespace filmiyorum
             // pictureBox2
             // 
             this.pictureBox2.Location = new System.Drawing.Point(458, 137);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(161, 210);
             this.pictureBox2.TabIndex = 7;
@@ -405,7 +405,7 @@ namespace filmiyorum
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(68, 137);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(161, 210);
             this.pictureBox1.TabIndex = 6;
@@ -426,7 +426,7 @@ namespace filmiyorum
             this.panel3.Controls.Add(this.pictureBox15);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Location = new System.Drawing.Point(2, 188);
-            this.panel3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel3.Margin = new System.Windows.Forms.Padding(6);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1819, 631);
             this.panel3.TabIndex = 20;
@@ -434,7 +434,7 @@ namespace filmiyorum
             // webBrowser1
             // 
             this.webBrowser1.Location = new System.Drawing.Point(948, 150);
-            this.webBrowser1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.webBrowser1.Margin = new System.Windows.Forms.Padding(6);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(37, 37);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(851, 462);
@@ -447,17 +447,18 @@ namespace filmiyorum
             this.button7.Font = new System.Drawing.Font("Agency FB", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button7.Location = new System.Drawing.Point(295, 397);
-            this.button7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button7.Margin = new System.Windows.Forms.Padding(6);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(411, 120);
             this.button7.TabIndex = 32;
             this.button7.Text = "DEGERLENDİR";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(163, 397);
-            this.button5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button5.Margin = new System.Windows.Forms.Padding(6);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(121, 118);
             this.button5.TabIndex = 30;
@@ -467,7 +468,7 @@ namespace filmiyorum
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(31, 397);
-            this.button6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button6.Margin = new System.Windows.Forms.Padding(6);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(121, 118);
             this.button6.TabIndex = 29;
@@ -532,7 +533,7 @@ namespace filmiyorum
             // pictureBox15
             // 
             this.pictureBox15.Location = new System.Drawing.Point(31, 18);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(253, 367);
             this.pictureBox15.TabIndex = 22;
@@ -549,19 +550,20 @@ namespace filmiyorum
             this.label5.TabIndex = 21;
             this.label5.Text = "Filmin Adı:";
             // 
-            // panel4
+            // degerlendirme
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel4.Controls.Add(this.button9);
-            this.panel4.Controls.Add(this.label12);
-            this.panel4.Controls.Add(this.label11);
-            this.panel4.Controls.Add(this.trackBar1);
-            this.panel4.Controls.Add(this.richTextBox1);
-            this.panel4.Location = new System.Drawing.Point(922, 188);
-            this.panel4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(878, 626);
-            this.panel4.TabIndex = 34;
+            this.degerlendirme.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.degerlendirme.Controls.Add(this.button9);
+            this.degerlendirme.Controls.Add(this.label12);
+            this.degerlendirme.Controls.Add(this.label11);
+            this.degerlendirme.Controls.Add(this.trackBar1);
+            this.degerlendirme.Controls.Add(this.richTextBox1);
+            this.degerlendirme.Location = new System.Drawing.Point(922, 188);
+            this.degerlendirme.Margin = new System.Windows.Forms.Padding(6);
+            this.degerlendirme.Name = "degerlendirme";
+            this.degerlendirme.Size = new System.Drawing.Size(878, 626);
+            this.degerlendirme.TabIndex = 34;
+            this.degerlendirme.Visible = false;
             // 
             // button9
             // 
@@ -570,12 +572,13 @@ namespace filmiyorum
             this.button9.Font = new System.Drawing.Font("Agency FB", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button9.Location = new System.Drawing.Point(264, 528);
-            this.button9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button9.Margin = new System.Windows.Forms.Padding(6);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(411, 92);
             this.button9.TabIndex = 35;
             this.button9.Text = "GONDER";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // label12
             // 
@@ -607,7 +610,7 @@ namespace filmiyorum
             // 
             this.trackBar1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.trackBar1.Location = new System.Drawing.Point(28, 150);
-            this.trackBar1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(6);
             this.trackBar1.Maximum = 5;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(836, 80);
@@ -619,7 +622,7 @@ namespace filmiyorum
             this.richTextBox1.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.Color.White;
             this.richTextBox1.Location = new System.Drawing.Point(39, 316);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(6);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(822, 198);
             this.richTextBox1.TabIndex = 33;
@@ -632,14 +635,14 @@ namespace filmiyorum
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1822, 836);
+            this.Controls.Add(this.degerlendirme);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel4);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Controls.Add(this.panel2);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Anasayfa";
             this.Text = "Anasayfa";
             this.panel1.ResumeLayout(false);
@@ -663,8 +666,8 @@ namespace filmiyorum
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.degerlendirme.ResumeLayout(false);
+            this.degerlendirme.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
 
@@ -711,7 +714,7 @@ namespace filmiyorum
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel degerlendirme;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.RichTextBox richTextBox1;

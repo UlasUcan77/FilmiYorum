@@ -59,5 +59,46 @@ namespace filmiyorum
             textBox4.Clear();
             richTextBox1.Clear();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string filmadi = textBox8.Text;
+            string yonetmen = textBox7.Text;
+            DateTime yayinyili =Convert.ToDateTime( textBox6.Text);
+            string tur = textBox5.Text;
+            string oyuncular = richTextBox2.Text;
+            baglan.Open();
+
+            //kayıt işlemi için komut tanımlanır
+            NpgsqlCommand aktar = new NpgsqlCommand("insert into \"filmler\"(filmadi, yonetmen, yayinyili, tur,oyuncular) values (@filmadi, @yonetmen, @yayinyili, @tur,@oyuncular)", baglan);
+            aktar.Parameters.AddWithValue("@filmadi", filmadi);
+            aktar.Parameters.AddWithValue("@yonetmen", yonetmen);
+            aktar.Parameters.AddWithValue("@yayinyili", yayinyili);
+            aktar.Parameters.AddWithValue("@tur", tur);
+            aktar.Parameters.AddWithValue("@oyuncular", oyuncular);
+
+            aktar.ExecuteNonQuery();
+
+
+            baglan.Close();
+
+
+            MessageBox.Show("Kayıt İşlemi Başarı ile Tamamlandı...");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string filmadi = textBox1.Text;
+            baglan.Open();
+            NpgsqlCommand degis = new NpgsqlCommand("update \"filmler\" set yonetmen=@yonetmen, tur=@tur, yayinyili=@yayinyili,oyuncular=@oyuncular WHERE filmadi=@filmadi", baglan);
+            degis.Parameters.AddWithValue("@yonetmen", textBox2.Text);
+            degis.Parameters.AddWithValue("@tur", textBox4.Text);
+            degis.Parameters.AddWithValue("@yayinyili",Convert.ToDateTime( textBox3.Text));
+            degis.Parameters.AddWithValue("@oyuncular", richTextBox1.Text);
+            degis.Parameters.AddWithValue("@filmadi", filmadi);
+            degis.ExecuteNonQuery();
+            MessageBox.Show("Değiştirme işlemi Başarı ile gerçekleşti...");
+            baglan.Close();
+        }
     }
 }
