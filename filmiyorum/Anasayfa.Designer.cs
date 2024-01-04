@@ -59,6 +59,9 @@ namespace filmiyorum
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
@@ -72,9 +75,6 @@ namespace filmiyorum
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -230,9 +230,9 @@ namespace filmiyorum
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(167, 110);
+            this.panel2.Location = new System.Drawing.Point(167, 102);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(796, 331);
+            this.panel2.Size = new System.Drawing.Size(823, 331);
             this.panel2.TabIndex = 5;
             // 
             // button8
@@ -387,7 +387,6 @@ namespace filmiyorum
             // panel3
             // 
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.webBrowser1);
             this.panel3.Controls.Add(this.button7);
             this.panel3.Controls.Add(this.button5);
@@ -399,7 +398,7 @@ namespace filmiyorum
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.pictureBox15);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(1, 110);
+            this.panel3.Location = new System.Drawing.Point(1, 102);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(992, 342);
             this.panel3.TabIndex = 20;
@@ -409,13 +408,49 @@ namespace filmiyorum
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel4.Controls.Add(this.button9);
             this.panel4.Controls.Add(this.label12);
-            this.panel4.Controls.Add(this.richTextBox1);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.trackBar1);
-            this.panel4.Location = new System.Drawing.Point(510, 0);
+            this.panel4.Controls.Add(this.richTextBox1);
+            this.panel4.Location = new System.Drawing.Point(503, 102);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(479, 339);
             this.panel4.TabIndex = 34;
+            // 
+            // button9
+            // 
+            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button9.Font = new System.Drawing.Font("Agency FB", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button9.Location = new System.Drawing.Point(144, 286);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(224, 50);
+            this.button9.TabIndex = 35;
+            this.button9.Text = "GONDER";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(212, 129);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(89, 42);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "YORUM";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.Black;
+            this.richTextBox1.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.White;
+            this.richTextBox1.Location = new System.Drawing.Point(21, 171);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(450, 109);
+            this.richTextBox1.TabIndex = 33;
+            this.richTextBox1.Text = "";
             // 
             // label11
             // 
@@ -545,42 +580,6 @@ namespace filmiyorum
             this.label5.TabIndex = 21;
             this.label5.Text = "Filmin Adı:";
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.Black;
-            this.richTextBox1.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(21, 171);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(450, 109);
-            this.richTextBox1.TabIndex = 33;
-            this.richTextBox1.Text = "";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(212, 129);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(89, 42);
-            this.label12.TabIndex = 34;
-            this.label12.Text = "YORUM";
-            // 
-            // button9
-            // 
-            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button9.Font = new System.Drawing.Font("Agency FB", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button9.Location = new System.Drawing.Point(144, 286);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(224, 50);
-            this.button9.TabIndex = 35;
-            this.button9.Text = "GONDER";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // Anasayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -588,12 +587,13 @@ namespace filmiyorum
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(994, 453);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel4);
             this.Name = "Anasayfa";
             this.Text = "Anasayfa";
             this.panel1.ResumeLayout(false);

@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace filmiyorum
 {
-    public partial class Profil : Form
+    public partial class profil : Form
     {
-        public Profil()
+        public profil()
         {
             InitializeComponent();
         }
+
     }
 }

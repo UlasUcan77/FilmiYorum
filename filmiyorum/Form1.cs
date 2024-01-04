@@ -26,9 +26,18 @@ namespace filmiyorum
         {
             Anasayfa form2 = new Anasayfa();
             form2.Show();
+            Admin form3 = new Admin();
+            form3.Show();
+            profil form4 = new profil();
+            form4.Show();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }
