@@ -21,6 +21,8 @@ namespace filmiyorum
 
         public string sifre { get; set; }
 
+        
+
         public kullanici(string a,string b,string c, string d, string e, string f , string g)
         {
             this.ad = a;
