@@ -141,11 +141,12 @@ namespace filmiyorum
             this.button4.BackColor = System.Drawing.Color.Transparent;
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Location = new System.Drawing.Point(0, 3);
+            this.button4.Location = new System.Drawing.Point(3, 11);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(58, 57);
             this.button4.TabIndex = 0;
             this.button4.UseVisualStyleBackColor = false;
+  
             // 
             // panel1
             // 

@@ -36,6 +36,7 @@ namespace filmiyorum
             this.girisyap = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.sifretxt = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.kullaniciaditxt = new System.Windows.Forms.TextBox();
@@ -56,7 +57,7 @@ namespace filmiyorum
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -145,6 +146,19 @@ namespace filmiyorum
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(543, 507);
             this.panel1.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button1.Font = new System.Drawing.Font("Agency FB", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.Location = new System.Drawing.Point(378, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(162, 48);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "GERI DÖN";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // sifretxt
             // 
@@ -375,6 +389,7 @@ namespace filmiyorum
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.checkBox1);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.girisyap);
@@ -387,18 +402,18 @@ namespace filmiyorum
             this.panel2.Size = new System.Drawing.Size(543, 504);
             this.panel2.TabIndex = 17;
             // 
-            // button1
+            // checkBox1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button1.Font = new System.Drawing.Font("Agency FB", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button1.Location = new System.Drawing.Point(378, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 48);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "GERI DÖN";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.checkBox1.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.checkBox1.Location = new System.Drawing.Point(362, 221);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(108, 28);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "Sifreyi Göster";
+            this.checkBox1.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -449,6 +464,7 @@ namespace filmiyorum
         private System.Windows.Forms.TextBox sifretxt;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
