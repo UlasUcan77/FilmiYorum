@@ -17,7 +17,7 @@ namespace filmiyorum
         {
             InitializeComponent();
         }
-        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=1234");
+        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql");
 
         //bağlanma işlemi ve atama işlemleri yapılır
 
@@ -77,7 +77,7 @@ namespace filmiyorum
             aktar.Parameters.AddWithValue("@ad", adtxt.Text);
             aktar.Parameters.AddWithValue("@soyad", soyadtxt.Text);
             aktar.Parameters.AddWithValue("@tckimlikno", tcnotxt.Text);
-            aktar.Parameters.AddWithValue("@dogumtarihi", dogumtarihitxt.Text);
+            aktar.Parameters.AddWithValue("@dogumtarihi", Convert.ToDateTime(dogumtarihitxt.Text));
             aktar.Parameters.AddWithValue("@cinsiyet", cinsiyetbox.Text);
             aktar.Parameters.AddWithValue("@uyelik", uyelikbox.Text);
             aktar.Parameters.AddWithValue("@kullaniciadi", kullaniciaditxt.Text);
