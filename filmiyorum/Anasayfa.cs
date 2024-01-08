@@ -20,29 +20,14 @@ namespace filmiyorum
         NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql");
         private void button7_Click(object sender, EventArgs e)
         {
-            if (degerlendirme.Visible)
-            {
-                degerlendirme.Visible = false; // Eğer panel görünürse, gizle
-            }
-            else
-            {
-                degerlendirme.Visible = true; // Eğer panel gizliyse, göster
-            }
+            degerlendirmePanel.Visible = true;
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
 
             string puan = trackBar1.Value.ToString();
-            
-            if (degerlendirme.Visible)
-            {
-                degerlendirme.Visible = false; // Eğer panel görünürse, gizle
-            }
-            else
-            {
-                degerlendirme.Visible = true; // Eğer panel gizliyse, göster
-            }
+            panel2.Visible = true;
         }
 
         private void Anasayfa_Load(object sender, EventArgs e)
@@ -51,13 +36,16 @@ namespace filmiyorum
             NpgsqlCommand komut = new NpgsqlCommand("SELECT filmadi,afis FROM filmler", baglan);
             NpgsqlDataReader reader = komut.ExecuteReader();
 
-            int pictureBoxWidth = 100; // PictureBox'ın genişliği
-            int pictureBoxHeight = 150; // PictureBox'ın yüksekliği
-            int spacing = 14; // PictureBox'lar arasındaki boşluk
+            int pictureBoxWidth = 160; // PictureBox'ın genişliği
+            int pictureBoxHeight = 180; // PictureBox'ın yüksekliği
+            int spacing = 20; // PictureBox'lar arasındaki boşluk
 
-            int panelWidth = panel2.ClientSize.Width; // Panel genişliği
-            int currentX = 50; // Şu anki PictureBox'ın X konumu
-            int currentY = 50; // Şu anki PictureBox'ın Y konumu
+            int panelWidth = 925; // Panel genişliği
+            int currentX = 20; // Şu anki PictureBox'ın X konumu
+            int currentY = 80; // Şu anki PictureBox'ın Y konumu
+
+            
+            
 
             while (reader.Read())
             {
@@ -81,14 +69,14 @@ namespace filmiyorum
                     pictureBox.Location = new Point(currentX, currentY);
 
                     // Yatayda sığabilecek kadar yer varsa
-                    if (currentX + pictureBoxWidth + spacing < panelWidth)
+                    if (currentX + pictureBoxWidth + spacing < panelWidth - spacing)
                     {
                         currentX += pictureBoxWidth + spacing;
                     }
                     else
                     {
                         // Yatayda sığamıyorsa, bir alt satıra geç
-                        currentX = 0;
+                        currentX = 20;
                         currentY += pictureBoxHeight + spacing;
                     }
 
@@ -96,6 +84,10 @@ namespace filmiyorum
 
                 }
             }
+
+            
+            panel2.Width = panelWidth;
+            panel2.AutoScroll = true;
             baglan.Close();
         }
         private void PictureBox_Click(object sender, EventArgs e)
@@ -103,6 +95,8 @@ namespace filmiyorum
 
             PictureBox pictureBox = (PictureBox)sender;
             string filmadi = pictureBox.Tag.ToString();
+
+            panel2.Visible = false;
         }
     }
 }
