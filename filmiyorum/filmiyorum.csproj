@@ -114,6 +114,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="kullanici.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="premium.cs" />
     <Compile Include="Profil.cs">
       <SubType>Form</SubType>

@@ -17,7 +17,7 @@ namespace filmiyorum
         {
             InitializeComponent();
         }
-        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql");
+        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=1234");
 
         //bağlanma işlemi ve atama işlemleri yapılır
 
@@ -40,12 +40,19 @@ namespace filmiyorum
             {
                 string kullaniciadi = reader["kullaniciadi"].ToString();    //database'den sifre ve sistemid bilgilerini alma
                 string sifre = reader["sifre"].ToString();
-
+                string ad = reader["ad"].ToString();
+                string soyad = reader["soyad"].ToString();
+                string tckimlikno = reader["tckimlikno"].ToString();
+                string dogumtarihi = reader["dogumtarihi"].ToString();
+                string cinsiyet = reader["cinsiyet"].ToString();
                 if (txtKullaniciAdi.Text == kullaniciadi && txtKullaniciSifre.Text == sifre)  //kullanıcıdan alınanlarla sistemdeki bilgileri karşılaştırma
                 {
                     Anasayfa form2 = new Anasayfa();
                     form2.ShowDialog();
                     this.Hide();
+
+                    Log.User = new kullanici(ad, soyad, tckimlikno, dogumtarihi, cinsiyet, kullaniciadi, sifre);
+
                 }
                 else if (txtKullaniciAdi.Text == adminkullaniciadi && txtKullaniciSifre.Text == adminsifre)
                 {

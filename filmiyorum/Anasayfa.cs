@@ -17,7 +17,7 @@ namespace filmiyorum
         {
             InitializeComponent();
         }
-        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql");
+        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=1234");
         private void button7_Click(object sender, EventArgs e)
         {
             if (degerlendirme.Visible)
@@ -47,7 +47,8 @@ namespace filmiyorum
 
         private void Anasayfa_Load(object sender, EventArgs e)
         {
-            
+            label2.Text = Log.User.ad;
+            label2.Text = Log.User?.ad;
 
             // Veritabanı bağlantısını açın
             baglan.Open();
