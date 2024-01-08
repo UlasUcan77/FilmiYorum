@@ -122,6 +122,12 @@
     <Compile Include="Profil.Designer.cs">
       <DependentUpon>Profil.cs</DependentUpon>
     </Compile>
+    <Compile Include="profilim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="profilim.Designer.cs">
+      <DependentUpon>profilim.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="standart.cs" />
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Profil.resx">
       <DependentUpon>Profil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="profilim.resx">
+      <DependentUpon>profilim.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

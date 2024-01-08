@@ -112,3 +112,4 @@ C:\Users\Umutl\Belgeler\GitHub\FilmiYorum\filmiyorum\bin\Debug\System.Threading.
 C:\Users\Umutl\Belgeler\GitHub\FilmiYorum\filmiyorum\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Umutl\Belgeler\GitHub\FilmiYorum\filmiyorum\bin\Debug\System.ValueTuple.xml
 C:\Users\Umutl\Belgeler\GitHub\FilmiYorum\filmiyorum\obj\Debug\filmiyorum.csproj.CopyComplete
+C:\Users\ulasu\Desktop\FilmiYorum\filmiyorum\obj\Debug\filmiyorum.profilim.resources

@@ -26,48 +26,7 @@ namespace filmiyorum
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string adminkullaniciadi = "admin";
-            string adminsifre = "123";
-
-            baglan.Open();
-            NpgsqlCommand komut = new NpgsqlCommand("Select * FROM kullanicilar", baglan); //Hastane database'inden giris table'ına erişim
-            NpgsqlDataReader reader = komut.ExecuteReader();
-
-
-            if (reader.Read())
-            {
-                string kullaniciadi = reader["kullaniciadi"].ToString();    //database'den sifre ve sistemid bilgilerini alma
-                string sifre = reader["sifre"].ToString();
-                string ad = reader["ad"].ToString();
-                string soyad = reader["soyad"].ToString();
-                string tckimlikno = reader["tckimlikno"].ToString();
-                string dogumtarihi = reader["dogumtarihi"].ToString();
-                string cinsiyet = reader["cinsiyet"].ToString();
-                if (txtKullaniciAdi.Text == kullaniciadi && txtKullaniciSifre.Text == sifre)  //kullanıcıdan alınanlarla sistemdeki bilgileri karşılaştırma
-                {
-                    Anasayfa form2 = new Anasayfa();
-                    form2.ShowDialog();
-                    this.Hide();
-
-                    Log.User = new kullanici(ad, soyad, tckimlikno, dogumtarihi, cinsiyet, kullaniciadi, sifre);
-
-                }
-                else if (txtKullaniciAdi.Text == adminkullaniciadi && txtKullaniciSifre.Text == adminsifre)
-                {
-                    Admin form3 = new Admin();
-                    form3.ShowDialog();
-                    this.Hide();
-
-                    MessageBox.Show("Yanlış sistem id veya şifre. \nLütfen tekrar deneyiniz.\nŞifrenizi unuttuysanız 'Şifremi Unuttum'a tıklayınız.");
-                }
-            }
-
-            reader.Close();
-            baglan.Close();
-        }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
             panel2.Visible = false;
@@ -109,7 +68,7 @@ namespace filmiyorum
             }
             else
             {
-                NpgsqlCommand komut = new NpgsqlCommand("SELECT sifre FROM kullanicilar WHERE kullaniciadi = @kullaniciadi", baglan);
+                NpgsqlCommand komut = new NpgsqlCommand("SELECT * FROM kullanicilar WHERE kullaniciadi = @kullaniciadi", baglan);
                 komut.Parameters.AddWithValue("@kullaniciadi", txtKullaniciAdi.Text);
 
                 baglan.Open();
@@ -118,9 +77,16 @@ namespace filmiyorum
                 if (reader.Read())
                 {
                     string sifre = reader["sifre"].ToString();
+                    string ad = reader["ad"].ToString();
+                    string soyad = reader["soyad"].ToString();
+                    string tckimlikno = reader["tckimlikno"].ToString();
+                    string dogumtarihi = reader["dogumtarihi"].ToString();
+                    string cinsiyet = reader["cinsiyet"].ToString();
+                    string kullaniciadi = txtKullaniciAdi.Text;
 
                     if (txtKullaniciSifre.Text == sifre)
                     {
+                        Log.User = new kullanici(ad, soyad, tckimlikno, dogumtarihi, cinsiyet, kullaniciadi, sifre);
                         // Kullanıcı adı ve şifre doğrulandı
                         Anasayfa form6 = new Anasayfa();
                         form6.Show();
