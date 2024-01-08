@@ -47,12 +47,17 @@ namespace filmiyorum
 
         private void Anasayfa_Load(object sender, EventArgs e)
         {
-            
-
-            // Veritabanı bağlantısını açın
             baglan.Open();
-            NpgsqlCommand komut = new NpgsqlCommand("SELECT afis FROM filmler", baglan);
+            NpgsqlCommand komut = new NpgsqlCommand("SELECT filmadi,afis FROM filmler", baglan);
             NpgsqlDataReader reader = komut.ExecuteReader();
+
+            int pictureBoxWidth = 100; // PictureBox'ın genişliği
+            int pictureBoxHeight = 150; // PictureBox'ın yüksekliği
+            int spacing = 14; // PictureBox'lar arasındaki boşluk
+
+            int panelWidth = panel2.ClientSize.Width; // Panel genişliği
+            int currentX = 50; // Şu anki PictureBox'ın X konumu
+            int currentY = 50; // Şu anki PictureBox'ın Y konumu
 
             while (reader.Read())
             {
@@ -60,6 +65,9 @@ namespace filmiyorum
                 if (reader["afis"] != DBNull.Value)
                 {
                     PictureBox pictureBox = new PictureBox();
+                    pictureBox.Height = pictureBoxHeight;
+                    pictureBox.Width = pictureBoxWidth;
+                    pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                     byte[] binaryData = (byte[])reader["afis"];
                     using (System.IO.MemoryStream ms = new System.IO.MemoryStream(binaryData))
                     {
@@ -67,29 +75,34 @@ namespace filmiyorum
                         Image image = Image.FromStream(ms);
                         pictureBox.Image = image;
                     }
-                }            
+                    pictureBox.Click += PictureBox_Click;
+                    pictureBox.Tag = reader["filmadi"];
+
+                    pictureBox.Location = new Point(currentX, currentY);
+
+                    // Yatayda sığabilecek kadar yer varsa
+                    if (currentX + pictureBoxWidth + spacing < panelWidth)
+                    {
+                        currentX += pictureBoxWidth + spacing;
+                    }
+                    else
+                    {
+                        // Yatayda sığamıyorsa, bir alt satıra geç
+                        currentX = 0;
+                        currentY += pictureBoxHeight + spacing;
+                    }
+
+                    panel2.Controls.Add(pictureBox);
+
+                }
             }
-
-
-            //if (reader.Read())
-            //{
-            //    byte[] binaryData = (byte[])reader["afis"]; // Veritabanından alınan binary veri
-
-            //    // Byte dizisinden görüntü oluşturma
-            //    using (System.IO.MemoryStream ms = new System.IO.MemoryStream(binaryData))
-            //    {
-            //        Image image = Image.FromStream(ms);
-
-            //        // PictureBox üzerinde görüntüyü gösterme
-            //        pictureBox1.Image = image;
-            //    }
-            //}
-
-            // Veritabanı bağlantısını kapatın
             baglan.Close();
-
         }
+        private void PictureBox_Click(object sender, EventArgs e)
+        {
 
-
+            PictureBox pictureBox = (PictureBox)sender;
+            string filmadi = pictureBox.Tag.ToString();
+        }
     }
 }
