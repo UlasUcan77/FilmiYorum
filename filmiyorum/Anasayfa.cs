@@ -17,7 +17,7 @@ namespace filmiyorum
         {
             InitializeComponent();
         }
-        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=1234");
+        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql");
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -113,6 +113,32 @@ namespace filmiyorum
 
             PictureBox pictureBox = (PictureBox)sender;
             string filmadi = pictureBox.Tag.ToString();
+
+            baglan.Open();
+            NpgsqlCommand filmBilgiKomut = new NpgsqlCommand("SELECT * FROM filmler WHERE filmadi = @filmadi", baglan);
+            filmBilgiKomut.Parameters.AddWithValue("@filmadi", filmadi);
+
+            NpgsqlDataReader filmReader = filmBilgiKomut.ExecuteReader();
+
+            if (filmReader.Read())
+            {
+                // Film bilgilerini labellara yazdır
+                lblFilmadi.Text = "Filmind adı: " + filmReader["filmadi"].ToString();
+                lblYonetmen.Text = "Yönetmen: " + filmReader["yonetmen"].ToString();
+                // lblTur.Text = "Türü: " + filmReader["tur"]; 
+                lblTarih.Text = "Çıkış Tarihi: " + filmReader["yayinyili"].ToString();
+                lblPuan.Text = "Puan: " + filmReader["puan"].ToString();
+                lblOyuncular.Text = "Oyuncular: " + filmReader["oyuncular"].ToString();
+                byte[] binaryData = (byte[])filmReader["afis"];
+                using (System.IO.MemoryStream ms = new System.IO.MemoryStream(binaryData))
+                {
+
+                    Image image = Image.FromStream(ms);
+                    picFilm.Image = image;
+                }
+            }
+
+            baglan.Close();
 
             panel2.Visible = false;
         }
