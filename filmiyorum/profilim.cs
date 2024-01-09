@@ -34,6 +34,7 @@ namespace filmiyorum
             txtdt.Text = Log.User.dogumtarihi;
             txttc.Text = Log.User.tckimlikno;
             cinsiyetbox.SelectedItem = Log.User.cinsiyet;
+            abonelikbox.SelectedItem = Log.User.uyelik;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -61,7 +62,10 @@ namespace filmiyorum
             sil.ExecuteNonQuery();
             MessageBox.Show("Hesap başarıyla silindi...");
             baglan.Close();
-            //BURADAN SONRA LOG'DAN CIKIS YAPILACAK VE GİRİŞ EKRANINA YÖNLENDİRİLECEK
+            Log.User = null;
+            Form1 giris = new Form1();
+            giris.Show();
+            this.Hide();
         }
     }
 }

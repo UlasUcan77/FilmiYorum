@@ -9,10 +9,10 @@ namespace filmiyorum
     class standart:kullanici
     {
         public string uyelik { get; set; }
-        public standart(string a, string b, string c, string d, string e, string f, string g, string h)
-            : base(a, b, c, d, e, f, g)
+        public standart(string a, string b, string c, string d, string e, string f, string g)
+            : base(a, b, c, d, e, f, g,"standart")
         {
-            this.uyelik = h;
+
         }
         public override int fiyat()
         {

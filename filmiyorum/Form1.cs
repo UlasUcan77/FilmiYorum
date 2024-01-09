@@ -82,15 +82,18 @@ namespace filmiyorum
                     string tckimlikno = reader["tckimlikno"].ToString();
                     string dogumtarihi = reader["dogumtarihi"].ToString();
                     string cinsiyet = reader["cinsiyet"].ToString();
+                    string uyelik = reader["uyelik"].ToString();
                     string kullaniciadi = txtKullaniciAdi.Text;
 
                     if (txtKullaniciSifre.Text == sifre)
                     {
-                        Log.User = new kullanici(ad, soyad, tckimlikno, dogumtarihi, cinsiyet, kullaniciadi, sifre);
-                        // Kullanıcı adı ve şifre doğrulandı
-                        Anasayfa form6 = new Anasayfa();
-                        form6.Show();
-                        this.Hide();
+                            Log.User = new kullanici(ad, soyad, tckimlikno, dogumtarihi, cinsiyet, kullaniciadi, sifre, uyelik);
+                            // Kullanıcı adı ve şifre doğrulandı
+                            Anasayfa form6 = new Anasayfa();
+                            form6.Show();
+                            this.Hide();
+                       
+                
                     }
                     else
                     {

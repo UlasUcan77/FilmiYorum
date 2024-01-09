@@ -21,9 +21,11 @@ namespace filmiyorum
 
         public string sifre { get; set; }
 
-        
+        public string uyelik { get; set; }
 
-        public kullanici(string a,string b,string c, string d, string e, string f , string g)
+
+
+        public kullanici(string a,string b,string c, string d, string e, string f , string g, string h)
         {
             this.ad = a;
             this.soyad = b;
@@ -32,6 +34,7 @@ namespace filmiyorum
             this.cinsiyet = e;
             this.kullaniciadi = f;
             this.sifre = g;
+            this.uyelik = h;
         }
 
         public virtual int fiyat()

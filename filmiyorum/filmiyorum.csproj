@@ -116,12 +116,6 @@
     <Compile Include="kullanici.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="premium.cs" />
-    <Compile Include="Profil.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Profil.Designer.cs">
-      <DependentUpon>Profil.cs</DependentUpon>
-    </Compile>
     <Compile Include="profilim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,9 +133,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Profil.resx">
-      <DependentUpon>Profil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="profilim.resx">
       <DependentUpon>profilim.cs</DependentUpon>
