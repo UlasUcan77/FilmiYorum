@@ -17,7 +17,7 @@ namespace filmiyorum
         {
             InitializeComponent();
         }
-        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql");
+        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=1234");
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -28,6 +28,21 @@ namespace filmiyorum
         {
 
             string puan = trackBar1.Value.ToString();
+            string degerlendirme = txtyorum.Text;
+            string kullaniciadi = Log.User.kullaniciadi;
+            string filmAdiLabel = lblFilmadi.Text;
+            string[] splitFilmAdi = filmAdiLabel.Split(':');
+            string filmAdi = splitFilmAdi[1].Trim();
+
+            baglan.Open();
+            NpgsqlCommand ekle = new NpgsqlCommand("INSERT INTO degerlendirme (kullaniciadi, puan, degerlendirme,filmadi) VALUES (@kullaniciadi, @puan, @degerlendirme,@filmadi)", baglan);
+            ekle.Parameters.AddWithValue("@kullaniciadi", kullaniciadi);
+            ekle.Parameters.AddWithValue("@puan", puan);
+            ekle.Parameters.AddWithValue("@degerlendirme", degerlendirme);
+            ekle.Parameters.AddWithValue("@filmadi", filmAdi);
+            ekle.ExecuteNonQuery();
+            baglan.Close();
+
             panel2.Visible = true;
         }
 
@@ -150,5 +165,9 @@ namespace filmiyorum
             this.Hide();
         }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
