@@ -57,7 +57,7 @@ namespace filmiyorum
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(70, 59);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(60, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -148,7 +148,7 @@ namespace filmiyorum
             this.txtad.Font = new System.Drawing.Font("Agency FB", 20.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.txtad.Location = new System.Drawing.Point(253, 57);
-            this.txtad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtad.Margin = new System.Windows.Forms.Padding(2);
             this.txtad.Name = "txtad";
             this.txtad.Size = new System.Drawing.Size(152, 39);
             this.txtad.TabIndex = 7;
@@ -159,7 +159,7 @@ namespace filmiyorum
             this.txtsoyad.Font = new System.Drawing.Font("Agency FB", 20.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsoyad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.txtsoyad.Location = new System.Drawing.Point(253, 99);
-            this.txtsoyad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtsoyad.Margin = new System.Windows.Forms.Padding(2);
             this.txtsoyad.Name = "txtsoyad";
             this.txtsoyad.Size = new System.Drawing.Size(152, 39);
             this.txtsoyad.TabIndex = 8;
@@ -170,7 +170,7 @@ namespace filmiyorum
             this.txttc.Font = new System.Drawing.Font("Agency FB", 20.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.txttc.Location = new System.Drawing.Point(253, 141);
-            this.txttc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txttc.Margin = new System.Windows.Forms.Padding(2);
             this.txttc.Mask = "00000000000";
             this.txttc.Name = "txttc";
             this.txttc.Size = new System.Drawing.Size(152, 39);
@@ -183,7 +183,7 @@ namespace filmiyorum
             this.txtdt.Font = new System.Drawing.Font("Agency FB", 20.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.txtdt.Location = new System.Drawing.Point(253, 183);
-            this.txtdt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtdt.Margin = new System.Windows.Forms.Padding(2);
             this.txtdt.Mask = "00/00/0000";
             this.txtdt.Name = "txtdt";
             this.txtdt.Size = new System.Drawing.Size(152, 39);
@@ -200,7 +200,7 @@ namespace filmiyorum
             "Erkek",
             "Kadın"});
             this.cinsiyetbox.Location = new System.Drawing.Point(253, 224);
-            this.cinsiyetbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cinsiyetbox.Margin = new System.Windows.Forms.Padding(2);
             this.cinsiyetbox.Name = "cinsiyetbox";
             this.cinsiyetbox.Size = new System.Drawing.Size(152, 40);
             this.cinsiyetbox.TabIndex = 11;
@@ -215,7 +215,7 @@ namespace filmiyorum
             "Premium",
             "Standart"});
             this.abonelikbox.Location = new System.Drawing.Point(253, 266);
-            this.abonelikbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.abonelikbox.Margin = new System.Windows.Forms.Padding(2);
             this.abonelikbox.Name = "abonelikbox";
             this.abonelikbox.Size = new System.Drawing.Size(152, 40);
             this.abonelikbox.TabIndex = 12;
@@ -226,7 +226,7 @@ namespace filmiyorum
             this.button1.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Info;
             this.button1.Location = new System.Drawing.Point(454, 87);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(236, 47);
             this.button1.TabIndex = 13;
@@ -240,7 +240,7 @@ namespace filmiyorum
             this.button2.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Info;
             this.button2.Location = new System.Drawing.Point(454, 141);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(236, 47);
             this.button2.TabIndex = 14;
@@ -254,7 +254,7 @@ namespace filmiyorum
             this.button3.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.Info;
             this.button3.Location = new System.Drawing.Point(454, 191);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(236, 47);
             this.button3.TabIndex = 15;
@@ -279,7 +279,7 @@ namespace filmiyorum
             // 
             this.panel1.BackColor = System.Drawing.Color.PapayaWhip;
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(54, 52);
+            this.panel1.Location = new System.Drawing.Point(70, 324);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(682, 254);
             this.panel1.TabIndex = 17;
@@ -300,7 +300,6 @@ namespace filmiyorum
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(797, 441);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -318,7 +317,8 @@ namespace filmiyorum
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "profilim";
             this.Text = "profilim";
             this.Load += new System.EventHandler(this.profilim_Load);

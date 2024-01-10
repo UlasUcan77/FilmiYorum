@@ -41,16 +41,35 @@ namespace filmiyorum
         {
             string kullaniciadi = Log.User.kullaniciadi;
             baglan.Open();
-            NpgsqlCommand degis = new NpgsqlCommand("UPDATE \"kullanicilar\" SET ad=@ad, soyad=@soyad, tckimlikno=@tckimlikno, dogumtarihi=@dogumtarihi, cinsiyet=@cinsiyet WHERE kullaniciadi=@kullaniciadi", baglan);
+            NpgsqlCommand degis = new NpgsqlCommand("UPDATE \"kullanicilar\" SET ad=@ad, soyad=@soyad, tckimlikno=@tckimlikno, dogumtarihi=@dogumtarihi, cinsiyet=@cinsiyet, uyelik=@uyelik WHERE kullaniciadi=@kullaniciadi", baglan);
             degis.Parameters.AddWithValue("@ad", txtad.Text);
             degis.Parameters.AddWithValue("@soyad", txtsoyad.Text);
             degis.Parameters.AddWithValue("@tckimlikno", txttc.Text);
             degis.Parameters.AddWithValue("@dogumtarihi", txtdt.Text);
             degis.Parameters.AddWithValue("@cinsiyet", cinsiyetbox.SelectedItem.ToString());
             degis.Parameters.AddWithValue("@kullaniciadi", kullaniciadi);
+            degis.Parameters.AddWithValue("@uyelik", abonelikbox.SelectedItem.ToString());
             degis.ExecuteNonQuery();
             MessageBox.Show("Değiştirme işlemi Başarı ile gerçekleşti...");
             baglan.Close();
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+
+
+            if (abonelikbox.Text == "Standart")
+            {
+                standart standart = new standart(Log.User.ad, Log.User.soyad, Log.User.tckimlikno, Log.User.dogumtarihi, Log.User.cinsiyet, Log.User.kullaniciadi, Log.User.sifre);
+                MessageBox.Show("Üyelik Ücretiniz '" + standart.fiyat() + "' TL olarak Güncellenmiştir");
+
+            }
+            else
+            {
+
+                premium premium = new premium(Log.User.ad, Log.User.soyad, Log.User.tckimlikno, Log.User.dogumtarihi, Log.User.cinsiyet, Log.User.kullaniciadi, Log.User.sifre);
+                MessageBox.Show("Üyelik Ücretiniz '" + premium.fiyat() + "' TL olarak Güncellenmiştir");
+            }
+            Log.User = null;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,5 +86,8 @@ namespace filmiyorum
             giris.Show();
             this.Hide();
         }
+
+
+        }
     }
-}
+

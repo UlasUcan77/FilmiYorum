@@ -23,7 +23,7 @@ namespace filmiyorum
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         
@@ -114,6 +114,19 @@ namespace filmiyorum
         {
             panel2.Visible = true;
             panel1.Visible = false;
+        }
+
+        private void uyelikbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (uyelikbox.Text == "Premium")
+            {
+                button4.Text = "125TL ile Uye Olun";
+                       
+                    }
+            else
+            {
+                button4.Text = "100TL ile Uye Olun";
+            }
         }
     }
 }

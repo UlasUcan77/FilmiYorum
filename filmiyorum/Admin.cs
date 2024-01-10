@@ -21,27 +21,38 @@ namespace filmiyorum
 
         private void button1_Click(object sender, EventArgs e)
         {
-            button2.Visible = true;
-            button3.Visible = true;
-            button1.Visible = false;
-            baglan.Open();
-            NpgsqlCommand cagir = new NpgsqlCommand("SELECT yonetmen, tur, yayinyili,oyuncular FROM  \"filmler\" WHERE filmadi=@filmadi", baglan);
-            string filmadi = textBox1.Text;
-            cagir.Parameters.AddWithValue("@filmadi", filmadi);
-            NpgsqlDataReader reader = cagir.ExecuteReader();
-            if (reader.Read())
+            if (textBox1.Text == "")
             {
-                textBox2.Text = reader["yonetmen"].ToString();
-                textBox3.Text = reader["yayinyili"].ToString();
-                textBox4.Text = reader["tur"].ToString();
-                richTextBox1.Text = reader["oyuncular"].ToString();
+                MessageBox.Show("Film Adı Girin!");
             }
-            reader.Close();
-            baglan.Close();
+            else
+            {
+
+
+                button5.Visible = true;
+                button2.Visible = true;
+                button3.Visible = true;
+                button1.Visible = false;
+                label3.Visible = label4.Visible = label5.Visible = label6.Visible = true;
+                textBox2.Visible = textBox3.Visible = textBox4.Visible = richTextBox1.Visible = true;
+                baglan.Open();
+                NpgsqlCommand cagir = new NpgsqlCommand("SELECT yonetmen, tur, yayinyili,oyuncular FROM  \"filmler\" WHERE filmadi=@filmadi", baglan);
+                string filmadi = textBox1.Text;
+                cagir.Parameters.AddWithValue("@filmadi", filmadi);
+                NpgsqlDataReader reader = cagir.ExecuteReader();
+                if (reader.Read())
+                {
+                    textBox2.Text = reader["yonetmen"].ToString();
+                    textBox3.Text = reader["yayinyili"].ToString();
+                    textBox4.Text = reader["tur"].ToString();
+                    richTextBox1.Text = reader["oyuncular"].ToString();
+                }
+                reader.Close();
+                baglan.Close();
 
 
 
-
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -62,6 +73,7 @@ namespace filmiyorum
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if(textBox8.Text != ""&& textBox7.Text != "" && textBox6.Text != "" && textBox5.Text != "" && richTextBox2.Text != "") { 
             string filmadi = textBox8.Text;
             string yonetmen = textBox7.Text;
             DateTime yayinyili =Convert.ToDateTime( textBox6.Text);
@@ -84,6 +96,11 @@ namespace filmiyorum
 
 
             MessageBox.Show("Kayıt İşlemi Başarı ile Tamamlandı...");
+            }
+            else
+            {
+                MessageBox.Show("Boş Kutu Bırakmayınız Lütfen");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -99,6 +116,18 @@ namespace filmiyorum
             degis.ExecuteNonQuery();
             MessageBox.Show("Değiştirme işlemi Başarı ile gerçekleşti...");
             baglan.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            button5.Visible = false;
+            button2.Visible = false;
+            button3.Visible = false;
+            button1.Visible = true;
+            label3.Visible = label4.Visible = label5.Visible = label6.Visible = false;
+            textBox2.Visible = textBox3.Visible = textBox4.Visible = richTextBox1.Visible = false;
+            textBox1.Clear();
+            
         }
     }
 }

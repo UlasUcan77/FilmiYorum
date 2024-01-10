@@ -23,7 +23,7 @@ namespace filmiyorum
 
         public string uyelik { get; set; }
 
-
+        public List<string> Watchlist;
 
         public kullanici(string a,string b,string c, string d, string e, string f , string g, string h)
         {

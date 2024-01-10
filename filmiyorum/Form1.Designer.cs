@@ -231,9 +231,9 @@ namespace filmiyorum
             this.button4.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.button4.Font = new System.Drawing.Font("Agency FB", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button4.Location = new System.Drawing.Point(185, 397);
+            this.button4.Location = new System.Drawing.Point(150, 401);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(162, 73);
+            this.button4.Size = new System.Drawing.Size(222, 73);
             this.button4.TabIndex = 16;
             this.button4.Text = "UYE OL";
             this.button4.UseVisualStyleBackColor = false;
@@ -264,6 +264,7 @@ namespace filmiyorum
             this.uyelikbox.Name = "uyelikbox";
             this.uyelikbox.Size = new System.Drawing.Size(165, 33);
             this.uyelikbox.TabIndex = 13;
+            this.uyelikbox.SelectedIndexChanged += new System.EventHandler(this.uyelikbox_SelectedIndexChanged);
             // 
             // cinsiyetbox
             // 
