@@ -37,7 +37,7 @@ namespace filmiyorum
 
 
         }
-        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql");
+        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=1234");
 
 
         private int GetFilmSayisi()
@@ -754,6 +754,26 @@ namespace filmiyorum
                 control.Dispose(); // Dispose, RichTextBox nesnesini bellekten temizler
             }
             panel2.Visible = true;
+        }
+
+
+
+        private void button5_Click(object sender, EventArgs e)
+        {//EKLE BUTONU
+            string filmadi = lblFilmAdi.Text;
+            Log.User.WatchListEkle(filmadi);
+            MessageBox.Show(filmadi +" Filmi Listenize Eklenmiştir");
+            button5.Enabled = false;
+            button6.Enabled = true;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {//ÇIKAR BUTONU
+            string filmadi = lblFilmAdi.Text;
+            Log.User.WatchListSil(filmadi);
+            MessageBox.Show(filmadi+" Filmi Listenizden Çıkartılmıştır");
+            button5.Enabled = true;
+            button6.Enabled = false;
         }
     }
 }

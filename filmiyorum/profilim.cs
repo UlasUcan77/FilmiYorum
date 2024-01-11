@@ -25,6 +25,7 @@ namespace filmiyorum
             Anasayfa anasayfa = new Anasayfa();
             anasayfa.Show();
             this.Hide();
+            
         }
 
         private void profilim_Load(object sender, EventArgs e)
@@ -35,6 +36,7 @@ namespace filmiyorum
             txttc.Text = Log.User.tckimlikno;
             cinsiyetbox.SelectedItem = Log.User.cinsiyet;
             abonelikbox.SelectedItem = Log.User.uyelik;
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

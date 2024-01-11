@@ -36,7 +36,23 @@ namespace filmiyorum
             this.sifre = g;
             this.uyelik = h;
         }
+        public void WatchListSil(string filmAdi)
+        {
+            Watchlist.Remove(filmAdi);
+        }
+        public void WatchListEkle(string filmAdi)
+        {
+            // Eğer Watchlist null ise, yeni bir liste oluştur
+            if (Watchlist == null)
+            {
+                Watchlist = new List<string>();
+            }
 
+            // Watchlist'e film adını ekle
+            Watchlist.Add(filmAdi);
+        
+        }
+        
         public virtual int fiyat()
         {
             return 100;
