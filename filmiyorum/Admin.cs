@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,9 +18,9 @@ namespace filmiyorum
         {
             InitializeComponent();
         }
-        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=1234");
+        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql");
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)   // BİLGİ GÜNCELLEME
         {
             if (textBox1.Text == "")
             {
@@ -55,7 +56,7 @@ namespace filmiyorum
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)  // FİLM SİLME
         {
             string filmadi = textBox1.Text;
             baglan.Open();
@@ -71,35 +72,67 @@ namespace filmiyorum
             richTextBox1.Clear();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)  //FİLM Ekleme
         {
-            if(textBox8.Text != ""&& textBox7.Text != "" && textBox6.Text != "" && textBox5.Text != "" && richTextBox2.Text != "") { 
-            string filmadi = textBox8.Text;
-            string yonetmen = textBox7.Text;
-            DateTime yayinyili =Convert.ToDateTime( textBox6.Text);
-            string tur = textBox5.Text;
-            string oyuncular = richTextBox2.Text;
-            baglan.Open();
+            if(textBox8.Text != ""&& textBox7.Text != "" && textBox6.Text != "" && textBox5.Text != "" && richTextBox2.Text != "") 
+            { 
+                string filmadi = textBox8.Text;
+                string yonetmen = textBox7.Text;
+                DateTime yayinyili =Convert.ToDateTime( textBox6.Text);
+                string tur = textBox5.Text;
+                string oyuncular = richTextBox2.Text;
+                baglan.Open();
 
-            //kayıt işlemi için komut tanımlanır
-            NpgsqlCommand aktar = new NpgsqlCommand("insert into \"filmler\"(filmadi, yonetmen, yayinyili, tur,oyuncular) values (@filmadi, @yonetmen, @yayinyili, @tur,@oyuncular)", baglan);
-            aktar.Parameters.AddWithValue("@filmadi", filmadi);
-            aktar.Parameters.AddWithValue("@yonetmen", yonetmen);
-            aktar.Parameters.AddWithValue("@yayinyili", yayinyili);
-            aktar.Parameters.AddWithValue("@tur", tur);
-            aktar.Parameters.AddWithValue("@oyuncular", oyuncular);
+                //kayıt işlemi için komut tanımlanır
+                NpgsqlCommand aktar = new NpgsqlCommand("insert into \"filmler\"(filmadi, yonetmen, yayinyili, tur,oyuncular, afis) values (@filmadi, @yonetmen, @yayinyili, @tur,@oyuncular, @afis)", baglan);
+                aktar.Parameters.AddWithValue("@filmadi", filmadi);
+                aktar.Parameters.AddWithValue("@yonetmen", yonetmen);
+                aktar.Parameters.AddWithValue("@yayinyili", yayinyili);
+                aktar.Parameters.AddWithValue("@tur", tur);
+                aktar.Parameters.AddWithValue("@oyuncular", oyuncular);
+                if (pictureBox1.Image != null)
+                {
+                    byte[] imageBytes = ImageToByteArray(pictureBox1.Image);
+                    aktar.Parameters.Add("@afis", NpgsqlTypes.NpgsqlDbType.Bytea).Value = imageBytes; 
+                        
+                }
+                else
+                {
+                    MessageBox.Show("Önce uygun bir afiş seçin.");
+                    return;
+                }
 
-            aktar.ExecuteNonQuery();
+                try
+                {
+                    aktar.ExecuteNonQuery();
+                    MessageBox.Show("Film verisi başarıyla eklendi.");
 
-
-            baglan.Close();
-
-
-            MessageBox.Show("Kayıt İşlemi Başarı ile Tamamlandı...");
+                    // Film adı değerlendirme veritabanına eklenir
+                    NpgsqlCommand degerlendirmeEkle = new NpgsqlCommand("INSERT INTO \"degerlendirme\" (filmadi) VALUES (@filmadi)", baglan);
+                    degerlendirmeEkle.Parameters.AddWithValue("@filmadi", filmadi);
+                    degerlendirmeEkle.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Film verisi eklenirken bir hata oluştu: " + ex.Message);
+                }
+                finally
+                {
+                    baglan.Close();
+                }
             }
             else
             {
                 MessageBox.Show("Boş Kutu Bırakmayınız Lütfen");
+            }
+        }
+
+        private byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
             }
         }
 
@@ -128,6 +161,19 @@ namespace filmiyorum
             textBox2.Visible = textBox3.Visible = textBox4.Visible = richTextBox1.Visible = false;
             textBox1.Clear();
             
+        }
+
+        private void afisEkle_Click(object sender, EventArgs e)
+        {
+           
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Image Files (*.png; *.jpg; *.jpeg; *.gif; *.bmp)|*.png;*.jpg;*.jpeg;*.gif;*.bmp";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                string imagePath = dialog.FileName;
+                pictureBox1.Image = Image.FromFile(imagePath);
+            }
+
         }
     }
 }

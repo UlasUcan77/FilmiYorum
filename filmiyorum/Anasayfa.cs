@@ -17,7 +17,7 @@ namespace filmiyorum
         {
             InitializeComponent();
         }
-        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=1234");
+        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql");
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -180,7 +180,15 @@ namespace filmiyorum
                     string kullaniciAdi = filmReader["kullaniciadi"].ToString();
                     string degerlendirme = filmReader["degerlendirme"].ToString();
                     string puan = filmReader["degerlendirmepuani"].ToString();
-                    richTextBox.Text += "\n   Kullanıcı Adı: " + kullaniciAdi + " Puan: " + puan + "\n " + degerlendirme + "\n";
+
+                    if (string.IsNullOrEmpty(degerlendirme) || string.IsNullOrEmpty(puan))
+                    {
+                        richTextBox.Text += "\n Henüz yorum yapılmamış.\n";
+                    }
+                    else
+                    {
+                        richTextBox.Text += "\n   Kullanıcı Adı: " + kullaniciAdi + " Puan: " + puan + "\n " + degerlendirme + "\n";
+                    }
 
                 } while (filmReader.Read());
 

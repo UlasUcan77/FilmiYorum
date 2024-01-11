@@ -69,7 +69,6 @@ C:\Users\Umutl\Belgeler\GitHub\FilmiYorum\filmiyorum\obj\Debug\filmiyorum.csproj
 C:\Users\Umutl\Belgeler\GitHub\FilmiYorum\filmiyorum\obj\Debug\filmiyorum.Admin.resources
 C:\Users\Umutl\Belgeler\GitHub\FilmiYorum\filmiyorum\obj\Debug\filmiyorum.Anasayfa.resources
 C:\Users\Umutl\Belgeler\GitHub\FilmiYorum\filmiyorum\obj\Debug\filmiyorum.Form1.resources
-C:\Users\Umutl\Belgeler\GitHub\FilmiYorum\filmiyorum\obj\Debug\filmiyorum.profil.resources
 C:\Users\Umutl\Belgeler\GitHub\FilmiYorum\filmiyorum\obj\Debug\filmiyorum.Properties.Resources.resources
 C:\Users\Umutl\Belgeler\GitHub\FilmiYorum\filmiyorum\obj\Debug\filmiyorum.csproj.GenerateResource.cache
 C:\Users\Umutl\Belgeler\GitHub\FilmiYorum\filmiyorum\obj\Debug\filmiyorum.csproj.CoreCompileInputs.cache

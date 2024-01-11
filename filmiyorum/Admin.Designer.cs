@@ -32,6 +32,7 @@ namespace filmiyorum
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,9 +58,11 @@ namespace filmiyorum
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.afisEkle = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -93,6 +96,19 @@ namespace filmiyorum
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Güncelle ve Sil";
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Agency FB", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button5.Location = new System.Drawing.Point(89, 367);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(164, 45);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "Vazgeç";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Visible = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label6
             // 
@@ -196,6 +212,8 @@ namespace filmiyorum
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.afisEkle);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
@@ -259,7 +277,7 @@ namespace filmiyorum
             this.richTextBox2.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox2.Location = new System.Drawing.Point(113, 216);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(164, 139);
+            this.richTextBox2.Size = new System.Drawing.Size(164, 79);
             this.richTextBox2.TabIndex = 18;
             this.richTextBox2.Text = "";
             // 
@@ -351,18 +369,25 @@ namespace filmiyorum
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // afisEkle
             // 
-            this.button5.Font = new System.Drawing.Font("Agency FB", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button5.Location = new System.Drawing.Point(89, 367);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(164, 45);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "Vazgeç";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Visible = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.afisEkle.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.afisEkle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.afisEkle.Location = new System.Drawing.Point(131, 391);
+            this.afisEkle.Name = "afisEkle";
+            this.afisEkle.Size = new System.Drawing.Size(110, 32);
+            this.afisEkle.TabIndex = 23;
+            this.afisEkle.Text = "Film Afisi Ekle";
+            this.afisEkle.UseVisualStyleBackColor = true;
+            this.afisEkle.Click += new System.EventHandler(this.afisEkle_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(113, 311);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(164, 69);
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
             // 
             // Admin
             // 
@@ -384,6 +409,7 @@ namespace filmiyorum
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,5 +445,7 @@ namespace filmiyorum
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button afisEkle;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
