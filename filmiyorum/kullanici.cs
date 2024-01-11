@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace filmiyorum
 {
-    public class kullanici
+    public abstract class kullanici
     {
         public string ad { get; set; }
         public string soyad { get; set; }

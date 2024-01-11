@@ -17,7 +17,7 @@ namespace filmiyorum
         {
             InitializeComponent();
         }
-        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql");
+        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=1234");
 
         //bağlanma işlemi ve atama işlemleri yapılır
 
@@ -87,13 +87,22 @@ namespace filmiyorum
 
                     if (txtKullaniciSifre.Text == sifre)
                     {
-                            Log.User = new kullanici(ad, soyad, tckimlikno, dogumtarihi, cinsiyet, kullaniciadi, sifre, uyelik);
+                        if (uyelik == "Premium") { 
+                            Log.User = new premium(ad, soyad, tckimlikno, dogumtarihi, cinsiyet, kullaniciadi, sifre);
                             // Kullanıcı adı ve şifre doğrulandı
                             Anasayfa form6 = new Anasayfa();
                             form6.Show();
                             this.Hide();
-                       
-                
+                        }
+                        else
+                        {
+                            Log.User = new standart(ad, soyad, tckimlikno, dogumtarihi, cinsiyet, kullaniciadi, sifre);
+                            // Kullanıcı adı ve şifre doğrulandı
+                            Anasayfa form6 = new Anasayfa();
+                            form6.Show();
+                            this.Hide();
+                        }
+
                     }
                     else
                     {
