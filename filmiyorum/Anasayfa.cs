@@ -16,8 +16,47 @@ namespace filmiyorum
         public Anasayfa()
         {
             InitializeComponent();
+            int filmCount = 17;
+            int filmSayisi = GetFilmSayisi();
+
+            NotifyIcon notifyIcon = new NotifyIcon();
+            notifyIcon.Icon = SystemIcons.Information;
+            if (filmSayisi > filmCount)
+            {
+                notifyIcon.Visible = true;
+                notifyIcon.BalloonTipTitle = "FilmiYoruma Hoşgeldiniz";
+                notifyIcon.BalloonTipText = filmSayisi - filmCount + " tane yeni film eklenmiştir.";
+                notifyIcon.ShowBalloonTip(3000);
+            }
+            else
+            {
+                notifyIcon.BalloonTipTitle = "FilmiYoruma Hoşgeldiniz";
+                notifyIcon.BalloonTipText = "";
+                notifyIcon.ShowBalloonTip(3000);
+            }
+
+
         }
         NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=1234");
+
+
+        private int GetFilmSayisi()
+        {
+            // Film sayısını veritabanından al
+            int filmSayisi = 0;
+
+            baglan.Open();
+
+            using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT COUNT(*) FROM filmler", baglan))
+            {
+                filmSayisi = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+
+            baglan.Close();
+
+
+            return filmSayisi;
+        }
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -166,7 +205,7 @@ namespace filmiyorum
                 lblTur.Text = filmReader["tur"].ToString();
                 lblTarih.Text = filmReader["yayinyili"].ToString();
                 lblPuan.Text = filmReader["puan"].ToString();
-                lblOyuncular.Text = "Oyuncular: " + filmReader["oyuncular"].ToString();
+                lblOyuncular.Text = filmReader["oyuncular"].ToString();
                 byte[] binaryData = (byte[])filmReader["afis"];
                 using (System.IO.MemoryStream ms = new System.IO.MemoryStream(binaryData))
                 {
