@@ -31,13 +31,13 @@ namespace filmiyorum
             else
             {
                 notifyIcon.BalloonTipTitle = "FilmiYoruma Hoşgeldiniz";
-                notifyIcon.BalloonTipText = "";
+                notifyIcon.BalloonTipText = "Giriş Başarılı";
                 notifyIcon.ShowBalloonTip(3000);
             }
 
 
         }
-        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=1234");
+        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql");
 
 
         private int GetFilmSayisi()
