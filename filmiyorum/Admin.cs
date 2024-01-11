@@ -107,6 +107,7 @@ namespace filmiyorum
                     aktar.ExecuteNonQuery();
                     MessageBox.Show("Film verisi başarıyla eklendi.");
 
+
                     // Film adı değerlendirme veritabanına eklenir
                     NpgsqlCommand degerlendirmeEkle = new NpgsqlCommand("INSERT INTO \"degerlendirme\" (filmadi) VALUES (@filmadi)", baglan);
                     degerlendirmeEkle.Parameters.AddWithValue("@filmadi", filmadi);

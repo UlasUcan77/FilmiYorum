@@ -16,6 +16,7 @@ namespace filmiyorum
         public Form1()
         {
             InitializeComponent();
+    
         }
         NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql");
 
@@ -26,7 +27,6 @@ namespace filmiyorum
            
         }
 
-        
         private void button2_Click(object sender, EventArgs e)
         {
             panel2.Visible = false;
