@@ -66,17 +66,16 @@ namespace filmiyorum
         private void button9_Click(object sender, EventArgs e)
         {
 
-            string puan = trackBar1.Value.ToString();
+            double degerlendirmepuani = trackBar1.Value;
             string degerlendirme = txtyorum.Text;
             string kullaniciadi = Log.User.kullaniciadi;
-            string filmAdiLabel = lblFilmAdi.Text;
-            string[] splitFilmAdi = filmAdiLabel.Split(':');
-            string filmAdi = splitFilmAdi[1].Trim();
+            string filmAdi = lblFilmAdi.Text;
+            
 
             baglan.Open();
-            NpgsqlCommand ekle = new NpgsqlCommand("INSERT INTO degerlendirme (kullaniciadi, puan, degerlendirme,filmadi) VALUES (@kullaniciadi, @puan, @degerlendirme,@filmadi)", baglan);
+            NpgsqlCommand ekle = new NpgsqlCommand("INSERT INTO degerlendirme (kullaniciadi, degerlendirmepuani, degerlendirme,filmadi) VALUES (@kullaniciadi, @degerlendirmepuani, @degerlendirme,@filmadi)", baglan);
             ekle.Parameters.AddWithValue("@kullaniciadi", kullaniciadi);
-            ekle.Parameters.AddWithValue("@puan", puan);
+            ekle.Parameters.AddWithValue("@degerlendirmepuani", degerlendirmepuani);
             ekle.Parameters.AddWithValue("@degerlendirme", degerlendirme);
             ekle.Parameters.AddWithValue("@filmadi", filmAdi);
             ekle.ExecuteNonQuery();
