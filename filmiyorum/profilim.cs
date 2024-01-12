@@ -89,7 +89,33 @@ namespace filmiyorum
             this.Hide();
         }
 
+        private void btnWatchlist_Click(object sender, EventArgs e)
+        {
+            panelWatchlist.Visible = true;
 
+            // Watchlist içindeki tekrar eden filmleri 1e düşürmek için 
+            HashSet<string> uniqueFilms = new HashSet<string>();
+
+            // GroupBox içindeki önceki etiketleri temizle
+            groupBoxWatchlist.Controls.Clear();
+
+            for (int i = 0; i < Log.User.Watchlist.Count; i++)
+            {
+                string filmAdi = Log.User.Watchlist[i];
+                int labelwidth = 200;
+
+                // Eğer daha önce eklenmemişse, etiketi oluştur ve GroupBox'a ekle
+                if (uniqueFilms.Add(filmAdi))
+                {
+                    Label label = new Label();
+                    label.Width = labelwidth;
+                    label.Text = filmAdi;
+                    label.Top = 10 + uniqueFilms.Count * 30;  // Y ekseninde aralıklı konumlandırma
+                    label.Left = 20;
+                    groupBoxWatchlist.Controls.Add(label);
+                }
+            }
         }
+    }
     }
 

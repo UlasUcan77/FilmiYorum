@@ -57,7 +57,7 @@ namespace filmiyorum
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkSifreGoster = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -390,7 +390,7 @@ namespace filmiyorum
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.checkBox1);
+            this.panel2.Controls.Add(this.checkSifreGoster);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.girisyap);
@@ -403,18 +403,19 @@ namespace filmiyorum
             this.panel2.Size = new System.Drawing.Size(543, 504);
             this.panel2.TabIndex = 17;
             // 
-            // checkBox1
+            // checkSifreGoster
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.checkBox1.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox1.Location = new System.Drawing.Point(362, 221);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(108, 28);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Sifreyi Göster";
-            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkSifreGoster.AutoSize = true;
+            this.checkSifreGoster.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.checkSifreGoster.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkSifreGoster.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.checkSifreGoster.Location = new System.Drawing.Point(362, 221);
+            this.checkSifreGoster.Name = "checkSifreGoster";
+            this.checkSifreGoster.Size = new System.Drawing.Size(108, 28);
+            this.checkSifreGoster.TabIndex = 8;
+            this.checkSifreGoster.Text = "Sifreyi Göster";
+            this.checkSifreGoster.UseVisualStyleBackColor = false;
+            this.checkSifreGoster.CheckedChanged += new System.EventHandler(this.checkSifreGoster_CheckedChanged);
             // 
             // Form1
             // 
@@ -469,7 +470,7 @@ namespace filmiyorum
         private System.Windows.Forms.TextBox sifretxt;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkSifreGoster;
     }
 }
 

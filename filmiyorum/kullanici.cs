@@ -38,7 +38,7 @@ namespace filmiyorum
         }
         public void WatchListSil(string filmAdi)
         {
-            Watchlist.Remove(filmAdi);
+            Watchlist.RemoveAll(film => film.Equals(filmAdi, StringComparison.OrdinalIgnoreCase)); //listede o filmden kaç tane varsa hepsini siler
         }
         public void WatchListEkle(string filmAdi)
         {

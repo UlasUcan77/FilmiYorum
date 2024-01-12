@@ -16,9 +16,12 @@ namespace filmiyorum
         public Form1()
         {
             InitializeComponent();
-    
+
+            txtKullaniciSifre.UseSystemPasswordChar = true;
+            checkSifreGoster.CheckedChanged += checkSifreGoster_CheckedChanged;
+
         }
-        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=1234");
+        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql");
 
         //bağlanma işlemi ve atama işlemleri yapılır
 
@@ -85,6 +88,12 @@ namespace filmiyorum
                     string uyelik = reader["uyelik"].ToString();
                     string kullaniciadi = txtKullaniciAdi.Text;
 
+                    int filmCount = 17;
+                    int filmSayisi = GetFilmSayisi();
+
+                    NotifyIcon notifyIcon = new NotifyIcon();
+                    notifyIcon.Icon = SystemIcons.Information;
+
                     if (txtKullaniciSifre.Text == sifre)
                     {
                         if (uyelik == "Premium") { 
@@ -93,6 +102,20 @@ namespace filmiyorum
                             Anasayfa form6 = new Anasayfa();
                             form6.Show();
                             this.Hide();
+
+                            if (filmSayisi > filmCount)
+                            {
+                                notifyIcon.Visible = true;
+                                notifyIcon.BalloonTipTitle = "FilmiYoruma Hoşgeldiniz";
+                                notifyIcon.BalloonTipText = filmSayisi - filmCount + " tane yeni film eklenmiştir.";
+                                notifyIcon.ShowBalloonTip(3000);
+                            }
+                            else
+                            {
+                                notifyIcon.BalloonTipTitle = "FilmiYoruma Hoşgeldiniz";
+                                notifyIcon.BalloonTipText = "Giriş Başarılı";
+                                notifyIcon.ShowBalloonTip(3000);
+                            }
                         }
                         else
                         {
@@ -101,6 +124,20 @@ namespace filmiyorum
                             Anasayfa form6 = new Anasayfa();
                             form6.Show();
                             this.Hide();
+
+                            if (filmSayisi > filmCount)
+                            {
+                                notifyIcon.Visible = true;
+                                notifyIcon.BalloonTipTitle = "FilmiYoruma Hoşgeldiniz";
+                                notifyIcon.BalloonTipText = filmSayisi - filmCount + " tane yeni film eklenmiştir.";
+                                notifyIcon.ShowBalloonTip(3000);
+                            }
+                            else
+                            {
+                                notifyIcon.BalloonTipTitle = "FilmiYoruma Hoşgeldiniz";
+                                notifyIcon.BalloonTipText = "Giriş Başarılı";
+                                notifyIcon.ShowBalloonTip(3000);
+                            }
                         }
 
                     }
@@ -117,6 +154,23 @@ namespace filmiyorum
                 reader.Close();
                 baglan.Close();
             }
+        }
+
+        private int GetFilmSayisi()
+        {
+            int filmSayisi = 0;
+            using (NpgsqlConnection connection = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql"))
+            {
+                connection.Open();
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT COUNT(*) FROM filmler", connection))
+                {
+                    filmSayisi = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+
+                connection.Close();
+            }
+            return filmSayisi;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -136,6 +190,11 @@ namespace filmiyorum
             {
                 button4.Text = "100TL ile Uye Olun";
             }
+        }
+
+        private void checkSifreGoster_CheckedChanged(object sender, EventArgs e)
+        {
+            txtKullaniciSifre.UseSystemPasswordChar = !checkSifreGoster.Checked; //butona basıldığına şifreyi gösterme tekrar basıldıgında tekrar gizleme
         }
     }
 }

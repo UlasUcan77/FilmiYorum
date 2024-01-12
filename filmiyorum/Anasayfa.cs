@@ -16,47 +16,8 @@ namespace filmiyorum
         public Anasayfa()
         {
             InitializeComponent();
-            int filmCount = 17;
-            int filmSayisi = GetFilmSayisi();
-
-            NotifyIcon notifyIcon = new NotifyIcon();
-            notifyIcon.Icon = SystemIcons.Information;
-            if (filmSayisi > filmCount)
-            {
-                notifyIcon.Visible = true;
-                notifyIcon.BalloonTipTitle = "FilmiYoruma Hoşgeldiniz";
-                notifyIcon.BalloonTipText = filmSayisi - filmCount + " tane yeni film eklenmiştir.";
-                notifyIcon.ShowBalloonTip(3000);
-            }
-            else
-            {
-                notifyIcon.BalloonTipTitle = "FilmiYoruma Hoşgeldiniz";
-                notifyIcon.BalloonTipText = "Giriş Başarılı";
-                notifyIcon.ShowBalloonTip(3000);
-            }
-
-
         }
-        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=1234");
-
-
-        private int GetFilmSayisi()
-        {
-            // Film sayısını veritabanından al
-            int filmSayisi = 0;
-
-            baglan.Open();
-
-            using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT COUNT(*) FROM filmler", baglan))
-            {
-                filmSayisi = Convert.ToInt32(cmd.ExecuteScalar());
-            }
-
-            baglan.Close();
-
-
-            return filmSayisi;
-        }
+        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql");
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -66,22 +27,53 @@ namespace filmiyorum
         private void button9_Click(object sender, EventArgs e)
         {
 
-            double degerlendirmepuani = trackBar1.Value;
+            double puan = trackBar1.Value;
             string degerlendirme = txtyorum.Text;
             string kullaniciadi = Log.User.kullaniciadi;
             string filmAdi = lblFilmAdi.Text;
-            
+
 
             baglan.Open();
-            NpgsqlCommand ekle = new NpgsqlCommand("INSERT INTO degerlendirme (kullaniciadi, degerlendirmepuani, degerlendirme,filmadi) VALUES (@kullaniciadi, @degerlendirmepuani, @degerlendirme,@filmadi)", baglan);
+            NpgsqlCommand ekle = new NpgsqlCommand("INSERT INTO degerlendirme (kullaniciadi, degerlendirmepuani, degerlendirme,filmadi) VALUES (@kullaniciadi, @puan, @degerlendirme,@filmadi)", baglan);
             ekle.Parameters.AddWithValue("@kullaniciadi", kullaniciadi);
-            ekle.Parameters.AddWithValue("@degerlendirmepuani", degerlendirmepuani);
+            ekle.Parameters.AddWithValue("@puan", puan);
             ekle.Parameters.AddWithValue("@degerlendirme", degerlendirme);
             ekle.Parameters.AddWithValue("@filmadi", filmAdi);
             ekle.ExecuteNonQuery();
-            baglan.Close();
 
+
+            NpgsqlCommand AVGpuan = new NpgsqlCommand("SELECT AVG(degerlendirmepuani) FROM degerlendirme WHERE filmadi = @filmadi", baglan);
+            AVGpuan.Parameters.AddWithValue("@filmadi", filmAdi);
+
+            object AVGPuanObj = AVGpuan.ExecuteScalar();
+
+            if (AVGPuanObj != DBNull.Value)
+            {
+                double ortalamaPuan = Convert.ToDouble(AVGPuanObj);
+
+                NpgsqlCommand updateKomut = new NpgsqlCommand("UPDATE filmler SET puan = @ortalamaPuan WHERE filmadi = @filmadi", baglan);
+                updateKomut.Parameters.AddWithValue("@ortalamaPuan", ortalamaPuan);
+                updateKomut.Parameters.AddWithValue("@filmadi", filmAdi);
+
+                int etkilenenSatirSayisi = updateKomut.ExecuteNonQuery();
+
+                if (etkilenenSatirSayisi > 0)
+                {
+                    Console.WriteLine("Ortalama puan başarıyla güncellendi.");
+                }
+                else
+                {
+                    Console.WriteLine("Ortalama puan güncelleme başarısız.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Belirtilen film adına sahip bir değerlendirme kaydı bulunamadı.");
+            }
+
+            degerlendirmePanel.Visible = false;
             panel2.Visible = true;
+            baglan.Close();
         }
 
         private void Anasayfa_Load(object sender, EventArgs e)
@@ -125,9 +117,6 @@ namespace filmiyorum
             int panelWidth = 925; // Panel genişliği
             int currentX = 20; // Şu anki PictureBox'ın X konumu
             int currentY = 80; // Şu anki PictureBox'ın Y konumu
-
-
-
 
             while (reader.Read())
             {
@@ -417,7 +406,7 @@ namespace filmiyorum
             }
 
             baglan.Open();
-            NpgsqlCommand komut = new NpgsqlCommand("SELECT * FROM filmler ORDER BY yayinyili DESC", baglan);
+            NpgsqlCommand komut = new NpgsqlCommand("SELECT * FROM filmler ORDER BY yayinyili DESC LIMIT 10", baglan);
             NpgsqlDataReader reader = komut.ExecuteReader();
 
             int pictureBoxWidth = 160; // PictureBox'ın genişliği
@@ -548,197 +537,7 @@ namespace filmiyorum
             giris.Show();
             this.Hide();
         }
-
-        private void btnMaxPuan_Click_1(object sender, EventArgs e)
-        {
-            foreach (Control control in panel2.Controls.OfType<PictureBox>().ToList())
-            {
-                panel2.Controls.Remove(control);
-                control.Dispose(); // Dispose, PictureBox nesnesini bellekten temizler
-            }
-
-            baglan.Open();
-            NpgsqlCommand komut = new NpgsqlCommand("SELECT * FROM filmler ORDER BY puan DESC LIMIT 10", baglan);
-            NpgsqlDataReader reader = komut.ExecuteReader();
-
-            int pictureBoxWidth = 160; // PictureBox'ın genişliği
-            int pictureBoxHeight = 180; // PictureBox'ın yüksekliği
-            int spacing = 20; // PictureBox'lar arasındaki boşluk
-
-            int panelWidth = 925; // Panel genişliği
-            int currentX = 20; // Şu anki PictureBox'ın X konumu
-            int currentY = 80; // Şu anki PictureBox'ın Y konumu
-
-
-            while (reader.Read())
-            {
-
-                if (reader["afis"] != DBNull.Value)
-                {
-                    PictureBox pictureBox = new PictureBox();
-                    pictureBox.Height = pictureBoxHeight;
-                    pictureBox.Width = pictureBoxWidth;
-                    pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                    byte[] binaryData = (byte[])reader["afis"];
-                    using (System.IO.MemoryStream ms = new System.IO.MemoryStream(binaryData))
-                    {
-
-                        Image image = Image.FromStream(ms);
-                        pictureBox.Image = image;
-                    }
-                    pictureBox.Click += PictureBox_Click;
-                    pictureBox.Tag = reader["filmadi"];
-
-                    pictureBox.Location = new Point(currentX, currentY);
-
-                    // Yatayda sığabilecek kadar yer varsa
-                    if (currentX + pictureBoxWidth + spacing < panelWidth - spacing)
-                    {
-                        currentX += pictureBoxWidth + spacing;
-                    }
-                    else
-                    {
-                        // Yatayda sığamıyorsa, bir alt satıra geç
-                        currentX = 20;
-                        currentY += pictureBoxHeight + spacing;
-                    }
-
-                    panel2.Controls.Add(pictureBox);
-
-                }
-            }
-
-
-            panel2.Width = panelWidth;
-            panel2.AutoScroll = true;
-            baglan.Close();
-        }
-
-        private void btnLatest_Click_1(object sender, EventArgs e)
-        {
-            foreach (Control control in panel2.Controls.OfType<PictureBox>().ToList())
-            {
-                panel2.Controls.Remove(control);
-                control.Dispose(); // Dispose, PictureBox nesnesini bellekten temizler
-            }
-
-            baglan.Open();
-            NpgsqlCommand komut = new NpgsqlCommand("SELECT * FROM filmler ORDER BY yayinyili DESC LIMIT 10", baglan);
-            NpgsqlDataReader reader = komut.ExecuteReader();
-
-            int pictureBoxWidth = 160; // PictureBox'ın genişliği
-            int pictureBoxHeight = 180; // PictureBox'ın yüksekliği
-            int spacing = 20; // PictureBox'lar arasındaki boşluk
-
-            int panelWidth = 925; // Panel genişliği
-            int currentX = 20; // Şu anki PictureBox'ın X konumu
-            int currentY = 80; // Şu anki PictureBox'ın Y konumu
-            while (reader.Read())
-            {
-
-                if (reader["afis"] != DBNull.Value)
-                {
-                    PictureBox pictureBox = new PictureBox();
-                    pictureBox.Height = pictureBoxHeight;
-                    pictureBox.Width = pictureBoxWidth;
-                    pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                    byte[] binaryData = (byte[])reader["afis"];
-                    using (System.IO.MemoryStream ms = new System.IO.MemoryStream(binaryData))
-                    {
-
-                        Image image = Image.FromStream(ms);
-                        pictureBox.Image = image;
-                    }
-                    pictureBox.Click += PictureBox_Click;
-                    pictureBox.Tag = reader["filmadi"];
-
-                    pictureBox.Location = new Point(currentX, currentY);
-
-                    // Yatayda sığabilecek kadar yer varsa
-                    if (currentX + pictureBoxWidth + spacing < panelWidth - spacing)
-                    {
-                        currentX += pictureBoxWidth + spacing;
-                    }
-                    else
-                    {
-                        // Yatayda sığamıyorsa, bir alt satıra geç
-                        currentX = 20;
-                        currentY += pictureBoxHeight + spacing;
-                    }
-
-                    panel2.Controls.Add(pictureBox);
-
-                }
-            }
-            baglan.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            foreach (Control control in panel2.Controls.OfType<PictureBox>().ToList())
-            {
-                panel2.Controls.Remove(control);
-                control.Dispose(); // Dispose, PictureBox nesnesini bellekten temizler
-            }
-
-            baglan.Open();
-            NpgsqlCommand komut = new NpgsqlCommand("SELECT filmadi,afis FROM filmler", baglan);
-            NpgsqlDataReader reader = komut.ExecuteReader();
-
-            int pictureBoxWidth = 160; // PictureBox'ın genişliği
-            int pictureBoxHeight = 180; // PictureBox'ın yüksekliği
-            int spacing = 20; // PictureBox'lar arasındaki boşluk
-
-            int panelWidth = 925; // Panel genişliği
-            int currentX = 20; // Şu anki PictureBox'ın X konumu
-            int currentY = 80; // Şu anki PictureBox'ın Y konumu
-
-
-
-
-            while (reader.Read())
-            {
-
-                if (reader["afis"] != DBNull.Value)
-                {
-                    PictureBox pictureBox = new PictureBox();
-                    pictureBox.Height = pictureBoxHeight;
-                    pictureBox.Width = pictureBoxWidth;
-                    pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                    byte[] binaryData = (byte[])reader["afis"];
-                    using (System.IO.MemoryStream ms = new System.IO.MemoryStream(binaryData))
-                    {
-
-                        Image image = Image.FromStream(ms);
-                        pictureBox.Image = image;
-                    }
-                    pictureBox.Click += PictureBox_Click;
-                    pictureBox.Tag = reader["filmadi"];
-
-                    pictureBox.Location = new Point(currentX, currentY);
-
-                    // Yatayda sığabilecek kadar yer varsa
-                    if (currentX + pictureBoxWidth + spacing < panelWidth - spacing)
-                    {
-                        currentX += pictureBoxWidth + spacing;
-                    }
-                    else
-                    {
-                        // Yatayda sığamıyorsa, bir alt satıra geç
-                        currentX = 20;
-                        currentY += pictureBoxHeight + spacing;
-                    }
-
-                    panel2.Controls.Add(pictureBox);
-
-                }
-            }
-
-
-            panel2.Width = panelWidth;
-            panel2.AutoScroll = true;
-            baglan.Close();
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -762,8 +561,6 @@ namespace filmiyorum
             string filmadi = lblFilmAdi.Text;
             Log.User.WatchListEkle(filmadi);
             MessageBox.Show(filmadi +" Filmi Listenize Eklenmiştir");
-            button5.Enabled = false;
-            button6.Enabled = true;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -771,8 +568,6 @@ namespace filmiyorum
             string filmadi = lblFilmAdi.Text;
             Log.User.WatchListSil(filmadi);
             MessageBox.Show(filmadi+" Filmi Listenizden Çıkartılmıştır");
-            button5.Enabled = true;
-            button6.Enabled = false;
         }
     }
 }
