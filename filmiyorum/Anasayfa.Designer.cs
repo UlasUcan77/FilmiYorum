@@ -47,9 +47,9 @@ namespace filmiyorum
             this.degerlendirmePanel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             this.txtyorum = new System.Windows.Forms.RichTextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.button2 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -308,18 +308,6 @@ namespace filmiyorum
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(212, 29);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 42);
-            this.label11.TabIndex = 32;
-            this.label11.Text = "PUAN";
-            // 
             // txtyorum
             // 
             this.txtyorum.BackColor = System.Drawing.Color.Black;
@@ -342,6 +330,18 @@ namespace filmiyorum
             this.label12.Size = new System.Drawing.Size(89, 42);
             this.label12.TabIndex = 900;
             this.label12.Text = "YORUM";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(212, 29);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 42);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "PUAN";
             // 
             // trackBar1
             // 
@@ -580,7 +580,10 @@ namespace filmiyorum
             this.Controls.Add(this.btnMaxPuan);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimizeBox = false;
             this.Name = "Anasayfa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Anasayfa";
             this.Load += new System.EventHandler(this.Anasayfa_Load);
             this.panel1.ResumeLayout(false);

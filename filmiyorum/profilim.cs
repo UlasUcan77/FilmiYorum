@@ -98,6 +98,12 @@ namespace filmiyorum
 
             // GroupBox içindeki önceki etiketleri temizle
             groupBoxWatchlist.Controls.Clear();
+           
+            if (Log.User.Watchlist == null || Log.User.Watchlist.Count == 0)
+            {
+                MessageBox.Show("Watchlist boş.");
+            }
+            else { 
 
             for (int i = 0; i < Log.User.Watchlist.Count; i++)
             {
@@ -114,7 +120,14 @@ namespace filmiyorum
                     label.Left = 20;
                     groupBoxWatchlist.Controls.Add(label);
                 }
+
+                }
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            panelWatchlist.Visible = false;
         }
     }
     }

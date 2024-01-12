@@ -21,7 +21,7 @@ namespace filmiyorum
             checkSifreGoster.CheckedChanged += checkSifreGoster_CheckedChanged;
 
         }
-        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql");
+        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=1234");
 
         //bağlanma işlemi ve atama işlemleri yapılır
 
@@ -159,7 +159,7 @@ namespace filmiyorum
         private int GetFilmSayisi()
         {
             int filmSayisi = 0;
-            using (NpgsqlConnection connection = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql"))
+            using (NpgsqlConnection connection = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=1234"))
             {
                 connection.Open();
 
