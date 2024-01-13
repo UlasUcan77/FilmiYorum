@@ -93,7 +93,7 @@ namespace filmiyorum
                 if (pictureBox1.Image != null)
                 {
                     byte[] imageBytes = ImageToByteArray(pictureBox1.Image);
-                    aktar.Parameters.Add("@afis", NpgsqlTypes.NpgsqlDbType.Bytea).Value = imageBytes; 
+                    aktar.Parameters.Add("@afis", NpgsqlTypes.NpgsqlDbType.Bytea).Value = imageBytes; // bytea olarak kaydetme
                         
                 }
                 else
@@ -132,7 +132,7 @@ namespace filmiyorum
         {
             using (MemoryStream ms = new MemoryStream())
             {
-                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);  // afişi byte array'e dönüştürme
                 return ms.ToArray();
             }
         }

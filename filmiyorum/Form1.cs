@@ -67,6 +67,7 @@ namespace filmiyorum
             {
                 Admin admin = new Admin();
                 admin.Show();
+                this.Hide();
 
             }
             else
