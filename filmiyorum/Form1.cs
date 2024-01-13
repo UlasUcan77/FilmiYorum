@@ -21,7 +21,7 @@ namespace filmiyorum
             checkSifreGoster.CheckedChanged += checkSifreGoster_CheckedChanged;
 
         }
-        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=1234");
+        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql");
 
         //bağlanma işlemi ve atama işlemleri yapılır
 
@@ -93,6 +93,7 @@ namespace filmiyorum
 
                     NotifyIcon notifyIcon = new NotifyIcon();
                     notifyIcon.Icon = SystemIcons.Information;
+                    notifyIcon.Visible = false;
 
                     if (txtKullaniciSifre.Text == sifre)
                     {
@@ -112,6 +113,7 @@ namespace filmiyorum
                             }
                             else
                             {
+                                notifyIcon.Visible = true;
                                 notifyIcon.BalloonTipTitle = "FilmiYoruma Hoşgeldiniz";
                                 notifyIcon.BalloonTipText = "Giriş Başarılı";
                                 notifyIcon.ShowBalloonTip(3000);
@@ -134,6 +136,7 @@ namespace filmiyorum
                             }
                             else
                             {
+                                notifyIcon.Visible = true;
                                 notifyIcon.BalloonTipTitle = "FilmiYoruma Hoşgeldiniz";
                                 notifyIcon.BalloonTipText = "Giriş Başarılı";
                                 notifyIcon.ShowBalloonTip(3000);
@@ -159,7 +162,7 @@ namespace filmiyorum
         private int GetFilmSayisi()
         {
             int filmSayisi = 0;
-            using (NpgsqlConnection connection = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=1234"))
+            using (NpgsqlConnection connection = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql"))
             {
                 connection.Open();
 

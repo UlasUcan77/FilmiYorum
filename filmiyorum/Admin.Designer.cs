@@ -44,6 +44,8 @@ namespace filmiyorum
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.afisEkle = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -58,8 +60,6 @@ namespace filmiyorum
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.afisEkle = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -232,6 +232,26 @@ namespace filmiyorum
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ekle";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(113, 311);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(164, 69);
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            // 
+            // afisEkle
+            // 
+            this.afisEkle.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.afisEkle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.afisEkle.Location = new System.Drawing.Point(131, 391);
+            this.afisEkle.Name = "afisEkle";
+            this.afisEkle.Size = new System.Drawing.Size(110, 32);
+            this.afisEkle.TabIndex = 23;
+            this.afisEkle.Text = "Film Afisi Ekle";
+            this.afisEkle.UseVisualStyleBackColor = true;
+            this.afisEkle.Click += new System.EventHandler(this.afisEkle_Click);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -369,26 +389,6 @@ namespace filmiyorum
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // afisEkle
-            // 
-            this.afisEkle.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.afisEkle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.afisEkle.Location = new System.Drawing.Point(131, 391);
-            this.afisEkle.Name = "afisEkle";
-            this.afisEkle.Size = new System.Drawing.Size(110, 32);
-            this.afisEkle.TabIndex = 23;
-            this.afisEkle.Text = "Film Afisi Ekle";
-            this.afisEkle.UseVisualStyleBackColor = true;
-            this.afisEkle.Click += new System.EventHandler(this.afisEkle_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(113, 311);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(164, 69);
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
-            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,7 +403,10 @@ namespace filmiyorum
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Admin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

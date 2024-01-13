@@ -17,7 +17,7 @@ namespace filmiyorum
         {
             InitializeComponent();
         }
-        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=1234");
+        NpgsqlConnection baglan = new NpgsqlConnection("server=localHost; port=5432;Database=Filmiyorum;user ID=postgres; password=dntf78523sql");
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -536,6 +536,8 @@ namespace filmiyorum
             Form1 giris = new Form1();
             giris.Show();
             this.Hide();
+
+            MessageBox.Show("Başarıyla çıkış yapılmıştır.");
         }
         
 

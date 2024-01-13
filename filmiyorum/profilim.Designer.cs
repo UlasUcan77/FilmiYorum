@@ -48,8 +48,8 @@ namespace filmiyorum
             this.button3 = new System.Windows.Forms.Button();
             this.btnWatchlist = new System.Windows.Forms.Button();
             this.panelWatchlist = new System.Windows.Forms.Panel();
-            this.groupBoxWatchlist = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.groupBoxWatchlist = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelWatchlist.SuspendLayout();
             this.SuspendLayout();
@@ -288,15 +288,6 @@ namespace filmiyorum
             this.panelWatchlist.TabIndex = 17;
             this.panelWatchlist.Visible = false;
             // 
-            // groupBoxWatchlist
-            // 
-            this.groupBoxWatchlist.Location = new System.Drawing.Point(3, 7);
-            this.groupBoxWatchlist.Name = "groupBoxWatchlist";
-            this.groupBoxWatchlist.Size = new System.Drawing.Size(489, 244);
-            this.groupBoxWatchlist.TabIndex = 19;
-            this.groupBoxWatchlist.TabStop = false;
-            this.groupBoxWatchlist.Text = "FAVORILER";
-            // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -308,6 +299,15 @@ namespace filmiyorum
             this.button4.Text = "Kapat";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // groupBoxWatchlist
+            // 
+            this.groupBoxWatchlist.Location = new System.Drawing.Point(3, 7);
+            this.groupBoxWatchlist.Name = "groupBoxWatchlist";
+            this.groupBoxWatchlist.Size = new System.Drawing.Size(489, 244);
+            this.groupBoxWatchlist.TabIndex = 19;
+            this.groupBoxWatchlist.TabStop = false;
+            this.groupBoxWatchlist.Text = "FAVORILER";
             // 
             // profilim
             // 
@@ -336,6 +336,7 @@ namespace filmiyorum
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "profilim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
